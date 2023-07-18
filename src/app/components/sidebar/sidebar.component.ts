@@ -9,4 +9,15 @@ import * as Fa from '@fortawesome/free-solid-svg-icons'
 export class SidebarComponent {
   faTable = Fa.faTable;
   faChartLine = Fa.faChartLine;
+  faMagnifyingGlassChart = Fa.faMagnifyingGlassChart;
+  faChartSimple= Fa.faChartSimple;
+  faList = Fa.faList;
+  faProjectDiagram = Fa.faProjectDiagram;
+  faUsersBetweenLines = Fa.faUsersBetweenLines;
+  faIdBadge = Fa.faIdBadge;
+  faCalendarWeek = Fa.faCalendarWeek;
+  faBusinessTime = Fa.faBusinessTime;
+  faLightbulb = Fa.faLightbulb;
+  faHouse = Fa.faHouse;
+
 }
