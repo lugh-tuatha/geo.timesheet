@@ -10,6 +10,8 @@ import { TimesheetComponent } from './pages/timesheet/timesheet.component';
 import { SummaryComponent } from './pages/summary/summary.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TableComponent } from './components/table/table.component';
+import { CardComponent } from './components/card/card.component';
+import { TrainingsComponent } from './pages/trainings/trainings.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TableComponent } from './components/table/table.component';
     DashboardComponent,
     TimesheetComponent,
     SummaryComponent,
-    TableComponent
+    TableComponent,
+    CardComponent,
+    TrainingsComponent
   ],
   imports: [
     BrowserModule,
