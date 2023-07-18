@@ -19,5 +19,15 @@
     img{
       width: 3rem;
     }
+
+    .logout{
+      display: flex;
+      gap: 0.5rem;
+      cursor: pointer;
+      
+      &:hover{
+        text-decoration: underline;
+      }
+    }
   }
 }
