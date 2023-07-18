@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { TimesheetComponent } from './pages/timesheet/timesheet.component';
+import { SummaryComponent } from './pages/summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,12 @@ import { TimesheetComponent } from './pages/timesheet/timesheet.component';
     HeaderComponent,
     SidebarComponent,
     DashboardComponent,
-    TimesheetComponent
+    TimesheetComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
