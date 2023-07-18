@@ -9,6 +9,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { TimesheetComponent } from './pages/timesheet/timesheet.component';
 import { SummaryComponent } from './pages/summary/summary.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SidebarComponent,
     DashboardComponent,
     TimesheetComponent,
-    SummaryComponent
+    SummaryComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
