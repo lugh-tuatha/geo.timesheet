@@ -9,6 +9,9 @@
   }
 
   ul{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
     li{
       font-size: 1.125rem;
       font-weight: 500;

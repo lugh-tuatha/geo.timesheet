@@ -1,0 +1,27 @@
+.timesheet-heading{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  .profile{
+    width: 25%;
+    text-align: center;
+    h1{
+      font-size: 1.5rem;
+    }
+  
+    p{
+      opacity: .6;
+    }
+  }
+
+  .instruction{
+    width: 35rem;
+    p{
+      font-weight: 600;
+    }
+    span{
+      font-weight: normal;
+
+    }
+  }
+}
