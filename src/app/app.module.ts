@@ -12,8 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TableComponent } from './components/table/table.component';
 import { CardComponent } from './components/card/card.component';
 import { TrainingsComponent } from './pages/trainings/trainings.component';
-import { AvatarComponent } from './avatar/avatar.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -26,8 +25,6 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     TableComponent,
     CardComponent,
     TrainingsComponent,
-    AvatarComponent,
-    FooterComponent
   ],
   imports: [
     BrowserModule,
