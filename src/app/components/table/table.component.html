@@ -1,16 +1,6 @@
 <table>
   <tr class="table-head">
-    <th>✓</th>
-    <th>Approved_By</th>
-    <th>OT</th>
-    <th>ND</th>
-    <th>Date</th>
-    <th>Location</th>
-    <th>Project</th>
-    <th>Task</th>
-    <th>Actual Hours</th>
-    <th>Project_Description</th>
-    <th>Week No</th>
+    <th *ngFor="let timesheetTable of thead">{{ timesheetTable.tableHead }}</th>
   </tr>
   
   <tr>
