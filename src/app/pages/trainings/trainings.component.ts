@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TRAINING } from 'src/app/data/training-data';
 
 @Component({
   selector: 'app-trainings',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./trainings.component.scss']
 })
 export class TrainingsComponent {
-
+  trainings = TRAINING;
 }

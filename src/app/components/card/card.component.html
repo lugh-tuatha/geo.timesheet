@@ -1,18 +1,17 @@
 <div class="box-card">
   <div class="box-content">
     
-    <h2 >Training</h2>
-    <img src="../../../assets/image/splash.jpg" [alt]="" class="card-img" />
+    <h2>{{ training.type }}</h2>
+    <img [src]="training.cover" [alt]="" class="card-img" />
     <div class="date">
-      <p>07/19/2023</p>
-      <p>8 Hours</p>
+      <p>{{ training.date }}</p>
+      <p>{{ training.duration }} Hours</p>
     </div>
     <div class="description">
-      <h3>Calib-og 2021-048</h3>
-      <p>BOSH SO1</p>
-      <p>A.Lopez Health Safety Training Consultancy</p>
-      <p>Basic Occupational Safety and<br> Health 
-        Training SO1</p>
+      <h3>{{ training.employeeCode }}</h3>
+      <p>{{ training.brands }}</p>
+      <p>{{ training.distriPartner }}</p>
+      <p>{{ training.details }}</p>
     </div>
   </div>
 </div>

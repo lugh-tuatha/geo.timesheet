@@ -1,5 +1,5 @@
 <div class="dashboard">
-  <h1>Welcome to the Training</h1>
-
-  <app-card></app-card>
+  <div class="training-container">
+    <app-card *ngFor="let training of trainings" [training]="training"></app-card>
+  </div>
 </div>

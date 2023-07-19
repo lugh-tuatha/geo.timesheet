@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TIMESHEET_TABLE } from 'src/app/model/timesheet-table-data';
+import { TIMESHEET_TABLE } from 'src/app/data/timesheet-table-data';
 
 @Component({
   selector: 'app-table',
