@@ -1,28 +1,25 @@
 .login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+
+  .login-header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 50vh;
+    margin-bottom: 20px;
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    img {
+      width: 50px;
+      height: auto;
+      margin-right: 10px;
+    }
   }
-  
-  .company-logo {
-    width: 50px; /* Adjust the width as needed */
-    height: auto; /* Preserve the aspect ratio */
-    margin-right: 10px; /* Add some spacing between the logo and the title */
-  }
-  
-  .user-login-container {
-    display: flex; /* Enable flexbox layout for the logo and title */
-    align-items: center; /* Align the elements vertically in the flex container */
-    margin-bottom: 20px; /* Add some spacing between the logo/title and the button */
-  }
-  
-  .user-login-title {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
+    
   .google-login-btn {
     padding: 10px 20px;
     display: flex;
@@ -33,11 +30,10 @@
     font-size: 14px;
     border-radius: 20px;
     cursor: pointer;
+    img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
   }
-  
-  .google-logo {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-  }
-  
+}

@@ -8,4 +8,11 @@ import { TIMESHEET_TABLE } from 'src/app/data/timesheet-table-data';
 })
 export class TableComponent {
   thead = TIMESHEET_TABLE;
+
+  thClass(forAdmin: boolean) {
+    if (forAdmin) {
+      return 'for-admin'; 
+    }
+    return '';
+  }
 }

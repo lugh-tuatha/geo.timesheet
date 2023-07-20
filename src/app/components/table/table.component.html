@@ -1,6 +1,10 @@
 <table>
   <tr class="table-head">
-    <th *ngFor="let timesheetTable of thead">{{ timesheetTable.tableHead }}</th>
+    <th 
+      [ngClass]="thClass(timesheetTable.forAdmin)"
+      *ngFor="let timesheetTable of thead">
+      {{ timesheetTable.tableHead }}
+    </th>
   </tr>
   
   <tr>
