@@ -1,5 +1,7 @@
-<div class="dashboard">
-  <div class="training-container">
-    <app-card *ngFor="let training of trainings" [training]="training"></app-card>
+<app-layout>
+  <div class="dashboard">
+    <div class="training-container">
+      <app-card *ngFor="let training of trainings" [training]="training"></app-card>
+    </div>
   </div>
-</div>
+</app-layout>

@@ -14,6 +14,7 @@ import { CardComponent } from './components/card/card.component';
 import { TrainingsComponent } from './pages/trainings/trainings.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { LoginComponent } from './pages/login/login.component';
+import { LayoutComponent } from './shared/components/layout/layout.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { LoginComponent } from './pages/login/login.component';
     TrainingsComponent,
     AvatarComponent,
     LoginComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,

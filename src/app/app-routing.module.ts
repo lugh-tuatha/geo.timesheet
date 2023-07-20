@@ -7,12 +7,11 @@ import { TrainingsComponent } from './pages/trainings/trainings.component';
 import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: TimesheetComponent },
+  { path: '', component: LoginComponent },
+  { path: 'timesheet', component: TimesheetComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'summary', component: SummaryComponent },
   { path: 'trainings', component: TrainingsComponent },
-  { path: 'login', component: LoginComponent },
-
 ];
 
 @NgModule({
