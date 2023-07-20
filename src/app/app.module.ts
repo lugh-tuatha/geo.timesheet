@@ -12,6 +12,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TableComponent } from './components/table/table.component';
 import { CardComponent } from './components/card/card.component';
 import { TrainingsComponent } from './pages/trainings/trainings.component';
+import { AvatarComponent } from './components/avatar/avatar.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { TrainingsComponent } from './pages/trainings/trainings.component';
     TableComponent,
     CardComponent,
     TrainingsComponent,
+    AvatarComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
