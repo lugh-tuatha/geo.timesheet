@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import * as Fa from '@fortawesome/free-solid-svg-icons'
 
 
 @Component({
@@ -9,5 +9,11 @@ import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  faRightFromBracket = faRightFromBracket;
+  faRightFromBracket = Fa.faRightFromBracket;
+  faRightToBracket = Fa.faRightToBracket;
+
+
+  isLoggedIn(): boolean {
+    return false;
+  }
 }

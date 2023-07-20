@@ -4,9 +4,16 @@
   <div class="user">
     <img src="../../../assets/image/logo.webp" alt="brand logo">
 
-    <div class="logout">
-      <p>Logout</p>
-      <fa-icon [icon]="faRightFromBracket"></fa-icon>
-    </div>
+    <ng-container [ngSwitch]="isLoggedIn()">
+      <div class="logout" *ngSwitchCase="true">
+        <p>Logout</p>
+        <fa-icon [icon]="faRightFromBracket"></fa-icon>
+      </div>
+
+      <div class="logout" *ngSwitchDefault>
+        <p>Login</p>
+        <fa-icon [icon]="faRightToBracket"></fa-icon>
+      </div>
+    </ng-container>
   </div>
 </nav>
