@@ -11,12 +11,7 @@ table{
   width: auto;
   text-align: center;
 
-  .table-head th:nth-child(1),
-  .table-head th:nth-child(2),
-  .table-head th:nth-child(3),
-  .table-head th:nth-child(4),
-  .table-head th:nth-child(10),
-  .table-head th:nth-child(11){
+  th.for-admin{
     background-color: yellow;
   }
 
