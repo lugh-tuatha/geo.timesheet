@@ -5,11 +5,11 @@
   .table-container{
     padding: 0 1.5rem;
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: .75rem;
     .table-info{
       padding: .5rem 0;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid var(--border-color);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -25,7 +25,7 @@
         .count{
           width: 3.5rem;
           height: 3.5rem;
-          border: 1px solid #ccc;
+          border: 1px solid var(--border-color);
           text-align: center;
           border-radius: .5rem;
           p{
@@ -43,7 +43,7 @@
 
         .week{
           padding: .35rem .65rem;
-          border: 1px solid #ccc;
+          border: 1px solid var(--border-color);
           border-radius: .5rem;
           h2{
             font-size: 1.25rem;
@@ -62,7 +62,7 @@
       thead{
         th{
           padding: .5rem 0;
-          border-bottom: 1px solid #ccc;
+          border-bottom: 1px solid var(--border-color);
           font-weight: 600;
         }
   
@@ -79,7 +79,7 @@
       tbody{
         td{
           padding: .5rem 0;
-          border-bottom: 1px solid #ccc;
+          border-bottom: 1px solid var(--border-color);
         }
       }
     }
