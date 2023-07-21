@@ -15,6 +15,7 @@ import { TrainingsComponent } from './pages/trainings/trainings.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './shared/components/layout/layout.component';
+import { ButtonComponent } from './shared/components/button/button.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { LayoutComponent } from './shared/components/layout/layout.component';
     AvatarComponent,
     LoginComponent,
     LayoutComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
