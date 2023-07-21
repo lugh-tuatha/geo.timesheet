@@ -1,0 +1,80 @@
+.container {
+  max-width: 100rem;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.week {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.week p {
+  font-size: 12px;
+}
+.count {
+  border: 1px solid black;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+}
+.number {
+  border: 1px solid black;
+  padding: 0.25rem 1rem;
+  border-radius: 5px;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.data1 {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 7px;
+  font-weight: 100;
+  margin-top: 10px;
+}
+
+.data1 p {
+  font-size: 12px;
+  font-weight: 200;
+}
+.day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 14px;
+  min-width: 55rem;
+}
+
+.content-table thead tr {
+  background-color: yellow;
+  text-align: left;
+  font-weight: bold;
+}
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid black;
+}
+
+.daytime p {
+  font-size: 12px;
+  font-weight: 300;
+  align-items: center;
+}
+.daytime h2 {
+  font-size: 14px;
+}
