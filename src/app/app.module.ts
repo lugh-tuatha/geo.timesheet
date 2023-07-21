@@ -17,8 +17,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './shared/components/layout/layout.component';
 import { ButtonComponent } from './shared/components/button/button.component';
 import { NgChartsModule } from 'ng2-charts';
-import { BarChartComponent } from './components/bar-chart/bar-chart.component';
-
+import { ChartComponent } from './components/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +34,7 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
     LoginComponent,
     LayoutComponent,
     ButtonComponent,
-    BarChartComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,
