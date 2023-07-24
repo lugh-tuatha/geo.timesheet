@@ -13,7 +13,7 @@ export const TRAINING: any = [
   {
     id: 2,
     type: "Webinar",
-    cover: "../../../assets/image/splash.jpg",
+    // cover: "../../../assets/image/splash.jpg",
     date: "4/11/2023",
     duration: "4",
     employeeCode: "Calib-og 2021-048",

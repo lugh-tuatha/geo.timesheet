@@ -2,7 +2,13 @@
   <div class="box-content">
     
     <h2>{{ training.type }}</h2>
-    <img [src]="training.cover" [alt]="" class="card-img" />
+
+    <ng-template #defaultImage>
+      <img src="../../../../assets/image/default/thumb.svg" alt="default thumbnail image">
+    </ng-template>
+
+    <img [src]="training.cover" [alt]="" class="card-img" 
+      *ngIf="training.cover; else defaultImage"/>
     <div class="date">
       <p>{{ training.date }}</p>
       <p>{{ training.duration }} Hours</p>

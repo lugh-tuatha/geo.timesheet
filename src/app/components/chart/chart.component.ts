@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Chart } from 'chart.js';
 
 @Component({
-  selector: 'bar-chart',
+  selector: 'app-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })

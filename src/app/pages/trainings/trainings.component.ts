@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TRAINING } from 'src/app/data/training-data';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-trainings',
@@ -8,4 +9,6 @@ import { TRAINING } from 'src/app/data/training-data';
 })
 export class TrainingsComponent {
   trainings = TRAINING;
+
+  faPlus = faPlus;
 }
