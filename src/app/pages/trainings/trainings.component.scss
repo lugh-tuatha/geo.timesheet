@@ -8,7 +8,7 @@
 .add__training{
   border: 1px solid var(--border-color);
   border-radius: .75rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--general-shadow);
 
   &:hover .plus{
     transform: scale(1.1);
