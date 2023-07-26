@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@abacritt/angularx-social-login": "^2.1.0",
     "@angular/animations": "^16.1.0",
     "@angular/common": "^16.1.0",
     "@angular/compiler": "^16.1.0",
@@ -23,9 +24,11 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@sweetalert2/ngx-sweetalert2": "^12.2.0",
     "chart.js": "^3.9.1",
     "ng2-charts": "^4.1.1",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^11.7.20",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },

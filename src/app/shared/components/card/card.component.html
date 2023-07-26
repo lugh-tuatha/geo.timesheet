@@ -1,14 +1,23 @@
 <div class="box-card">
   <div class="box-content">
-    
-    <h2>{{ training.type }}</h2>
+    <div class="training-type">
+      <h2>{{ training.type }}</h2>
+      <fa-icon [icon]="faEllipsisVertical"></fa-icon>
+    </div>
 
     <ng-template #defaultImage>
-      <img src="../../../../assets/image/default/thumb.svg" alt="default thumbnail image">
+      <img
+        src="../../../../assets/image/default/thumb.svg"
+        alt="default thumbnail image"
+      />
     </ng-template>
 
-    <img [src]="training.cover" [alt]="" class="card-img" 
-      *ngIf="training.cover; else defaultImage"/>
+    <img
+      [src]="training.cover"
+      [alt]=""
+      class="card-img"
+      *ngIf="training.cover; else defaultImage"
+    />
     <div class="date">
       <p>{{ training.date }}</p>
       <p>{{ training.duration }} Hours</p>

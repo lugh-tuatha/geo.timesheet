@@ -1,6 +1,6 @@
 .box-card {
   border: 1px solid #ccc;
-  border-radius: .75rem;
+  border-radius: 0.75rem;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: white;
@@ -9,22 +9,35 @@
 
   .box-content {
     text-align: center;
-    h2{
-      font-size: 1.3rem;
+    .training-type {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        font-size: 1.3rem;
+      }
+      fa-icon {
+        color: gray;
+        font-size: 1.115rem;
+        cursor: pointer;
+        opacity: 0.75;
+        justify-self: flex-end;
+      }
     }
     img {
       width: 100%;
       background-color: var(--default-bg);
       aspect-ratio: 16/9;
       margin-top: 5px;
-      border-radius: .75rem;
+      border-radius: 0.75rem;
     }
     .date {
-        font-size: 14px;
-        color: #888;
-        display: flex;
-        justify-content:space-between;
-        align-items: space-between;
+      font-size: 14px;
+      color: #888;
+      display: flex;
+      justify-content: space-between;
+      align-items: space-between;
     }
     .description {
       h3,
@@ -36,7 +49,7 @@
       }
       p:nth-child(4) {
         font-weight: 300;
-        font-size: .9rem;
+        font-size: 0.9rem;
       }
     }
     .card-title {
