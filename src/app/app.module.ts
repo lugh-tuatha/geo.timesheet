@@ -19,6 +19,8 @@ import { ButtonComponent } from './shared/components/button/button.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartComponent } from './components/chart/chart.component';
 
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +43,7 @@ import { ChartComponent } from './components/chart/chart.component';
     AppRoutingModule,
     FontAwesomeModule,
     NgChartsModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
