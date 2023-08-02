@@ -7,37 +7,39 @@
     </th>
   </tr>
   
-  <tr>
-    <td>
-      <input type="checkbox" checked>
-    </td>
-    <td>Villamar</td>
-    <td>
-      <input type="checkbox">
-    </td>
-    <td>
-      <input type="checkbox">
-    </td>
-    <td>Jun-26</td>
-    <td>
-      <select class="location-dropdown">
-        <option value="OFC-DW">OFC-DW</option>
-        <option value="OFC-ND">OFC-ND</option>
-        <option value="FLD">FLD</option>
-        <option value="WFH">WFH</option>
-        <option value="LVE">LVE</option>
-      </select>
-    </td>
-    <td>GEO</td>
-    <td>
-      <textarea  class="table-input task" cols="40" rows="1"></textarea>
-    </td>
-    <td>
-      <input type="text" class="table-input hour" >
-    </td>
-    <td>
-      Overhead
-    </td>
-    <td>01</td>
-  </tr>
+  <ng-container *ngFor="let timesheetData of timesheet">
+    <tr>
+      <td>
+        <input type="checkbox" checked>
+      </td>
+      <td>{{ timesheetData.approvedBy }}</td>
+      <td>
+        <input type="checkbox">
+      </td>
+      <td>
+        <input type="checkbox">
+      </td>
+      <td>{{ timesheetData.date }}</td>
+      <td>
+        <select class="location-dropdown">
+          <option value="OFC-DW">OFC-DW</option>
+          <option value="OFC-ND">OFC-ND</option>
+          <option value="FLD">FLD</option>
+          <option value="WFH">WFH</option>
+          <option value="LVE">LVE</option>
+        </select>
+      </td>
+      <td>{{ timesheetData.project }}</td>
+      <td>
+        <textarea  class="table-input task" cols="40" rows="1"></textarea>
+      </td>
+      <td>
+        <input type="text" class="table-input hour" >
+      </td>
+      <td>
+        {{ timesheetData.projectDescription }}
+      </td>
+      <td>{{ timesheetData.weekNo }}</td>
+    </tr>
+  </ng-container>
 </table>

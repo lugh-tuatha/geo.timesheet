@@ -13,16 +13,12 @@ export class CardComponent {
   readonly ApptivoApiUrl = 'http://localhost:9000/geo/api/v1/trainings'
 
   constructor(private http:HttpClient){}
+  
   trainings: Training[] = [];
-  refreshTrainings(){
+  ngOnInit(){
     this.http.get<any>(this.ApptivoApiUrl).subscribe((response: any) => {
       this.trainings = response.data.findTrainings;
-      console.log('Received data:', this.trainings);
     });
-  }
-
-  ngOnInit(){
-    this.refreshTrainings();
   }
 
   faEllipsisVertical = faEllipsisVertical;

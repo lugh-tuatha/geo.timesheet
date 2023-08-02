@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { TIMESHEET_TABLE } from 'src/app/data/timesheet-table-data';
+import { Timesheet } from 'src/app/model/timesheet';
 
 @Component({
   selector: 'app-table',
@@ -15,5 +17,15 @@ export class TableComponent {
       return 'for-admin'; 
     }
     return '';
+  }
+
+  constructor(private http: HttpClient) {}
+
+  timesheet: Timesheet[] = [];
+  ngOnInit(){
+    this.http.get<any>('http://localhost:9000/geo/api/v1/timesheet').subscribe((response: any) => {
+      this.timesheet = response.data.findTimesheet
+      console.log('Received data:', this.timesheet);
+    });
   }
 }
