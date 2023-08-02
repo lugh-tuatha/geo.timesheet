@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TRAINING } from 'src/app/data/training-data';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({

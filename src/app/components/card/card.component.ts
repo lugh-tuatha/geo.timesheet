@@ -9,12 +9,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  readonly APIUrl = 'http://localhost:9000/geo/api/v1/trainings'
+  readonly ApptivoApiUrl = 'http://localhost:9000/geo/api/v1/trainings'
 
   constructor(private http:HttpClient){}
   trainings: Training[] = [];
   refreshTrainings(){
-    this.http.get<any>(this.APIUrl).subscribe((response: any) => {
+    this.http.get<any>(this.ApptivoApiUrl).subscribe((response: any) => {
       this.trainings = response.data.findTrainings;
       console.log('Received data:', this.trainings);
     });

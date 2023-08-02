@@ -10,7 +10,7 @@ import { TimesheetComponent } from './pages/timesheet/timesheet.component';
 import { SummaryComponent } from './pages/summary/summary.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TableComponent } from './components/table/table.component';
-import { CardComponent } from './shared/components/card/card.component';
+import { CardComponent } from './components/card/card.component';
 import { TrainingsComponent } from './pages/trainings/trainings.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { LoginComponent } from './pages/login/login.component';
