@@ -8,7 +8,5 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./trainings.component.scss']
 })
 export class TrainingsComponent {
-  trainings = TRAINING;
-
   faPlus = faPlus;
 }

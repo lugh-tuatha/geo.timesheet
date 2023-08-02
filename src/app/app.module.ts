@@ -18,6 +18,7 @@ import { LayoutComponent } from './shared/components/layout/layout.component';
 import { ButtonComponent } from './shared/components/button/button.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartComponent } from './components/chart/chart.component';
+import { HttpClientModule } from '@angular/common/http'
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
@@ -43,7 +44,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     AppRoutingModule,
     FontAwesomeModule,
     NgChartsModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
