@@ -10,7 +10,7 @@ import { TimesheetComponent } from './pages/timesheet/timesheet.component';
 import { SummaryComponent } from './pages/summary/summary.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TableComponent } from './components/table/table.component';
-import { CardComponent } from './shared/components/card/card.component';
+import { CardComponent } from './components/card/card.component';
 import { TrainingsComponent } from './pages/trainings/trainings.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -18,6 +18,7 @@ import { LayoutComponent } from './shared/components/layout/layout.component';
 import { ButtonComponent } from './shared/components/button/button.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartComponent } from './components/chart/chart.component';
+import { HttpClientModule } from '@angular/common/http'
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
@@ -43,7 +44,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     AppRoutingModule,
     FontAwesomeModule,
     NgChartsModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
