@@ -10,18 +10,19 @@
   <ng-container *ngFor="let timesheetData of timesheet">
     <tr>
       <td>
-        <input type="checkbox" checked>
+        <input type="checkbox" [checked]="timesheetData.isChecked" disabled>
       </td>
       <td>{{ timesheetData.approvedBy }}</td>
       <td>
-        <input type="checkbox">
+        <input type="checkbox" [checked]="timesheetData.isOT" disabled>
       </td>
       <td>
-        <input type="checkbox">
+        <input type="checkbox" [checked]="timesheetData.isND" disabled>
       </td>
       <td>{{ timesheetData.date }}</td>
       <td>
-        <select class="location-dropdown">
+        <select class="location-dropdown" >
+          <option selected disabled hidden>{{timesheetData.location}}</option>
           <option value="OFC-DW">OFC-DW</option>
           <option value="OFC-ND">OFC-ND</option>
           <option value="FLD">FLD</option>
@@ -31,10 +32,10 @@
       </td>
       <td>{{ timesheetData.project }}</td>
       <td>
-        <textarea  class="table-input task" cols="40" rows="1"></textarea>
+        <textarea  class="table-input task" cols="40" rows="1" >{{ timesheetData.task }}</textarea>
       </td>
       <td>
-        <input type="text" class="table-input hour" >
+        <input type="text" class="table-input hour" [value]="timesheetData.actualHours">
       </td>
       <td>
         {{ timesheetData.projectDescription }}

@@ -5,6 +5,7 @@ export interface Timesheet {
   isOT: boolean,
   isND: boolean,
   date: String,
+  location: String,
   project: String,
   task: String,
   actualHours: Number,
