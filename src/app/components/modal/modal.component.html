@@ -1,0 +1,9 @@
+<div class="modal-overlay" *ngIf="isModalOpen">
+  <div class="modal-container">
+    <h2>Geoplan Philippines</h2>
+    <p>This is the modal content.</p>
+    <button (click)="closeModal()">Close</button>
+  </div>
+</div>
+
+<button class="open-modal-button" (click)="openModal()">Open Modal</button>
