@@ -6,8 +6,9 @@
           <h2>{{ trainingData.type }}</h2>
           <div class="card-menu">
             <fa-icon [icon]="faEllipsisVertical" (click)="toggleMenu(i)"></fa-icon>
+
             <div class="toggle-item" *ngIf="isMenuOpened[i]" (click)="toggleMenu(i)">
-              <div>Edit</div>
+              <div class="edit">Edit</div>
               <div>Delete</div>
             </div>
           </div>
