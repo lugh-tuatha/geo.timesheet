@@ -20,6 +20,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { ChartComponent } from './components/chart/chart.component';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     LayoutComponent,
     ButtonComponent,
     ChartComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
