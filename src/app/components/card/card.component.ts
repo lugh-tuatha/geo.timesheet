@@ -23,4 +23,28 @@ export class CardComponent {
 
   faEllipsisVertical = faEllipsisVertical;
   faPlus = faPlus;
+
+  isMenuOpened: boolean[] = [];
+
+  // Initialize the menu states for each card
+  initializeMenuStates(): void {
+    this.isMenuOpened = this.trainings.map(() => false);
+  }
+
+  // Toggle the menu for the card at the given index
+  toggleMenu(index: number): void {
+    this.isMenuOpened[index] = !this.isMenuOpened[index];
+    
+    // Close menus for other cards
+    for (let i = 0; i < this.isMenuOpened.length; i++) {
+      if (i !== index) {
+        this.isMenuOpened[i] = false;
+      }
+    }
+  }
+
+  closeMenu(): void {
+    // Close all menus
+    this.isMenuOpened = this.isMenuOpened.map(() => false);
+  }
 }

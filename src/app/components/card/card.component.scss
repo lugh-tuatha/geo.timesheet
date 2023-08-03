@@ -29,6 +29,25 @@
           opacity: 0.75;
           justify-self: flex-end;
         }
+        .card-menu{
+          position: relative;
+
+          .toggle-item{
+            position: absolute;
+            right: .5rem;
+            background-color: white;
+          }
+  
+          .toggle-item div{
+            cursor: pointer;
+            padding: 5px 20px;
+          }
+
+          .toggle-item div:hover{
+            background-color: rgba($color: #ccc, $alpha: .5);
+          }
+        }
+
       }
       img {
         width: 100%;
