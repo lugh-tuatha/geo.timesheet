@@ -1,45 +1,49 @@
-
 <div class="card-container">
-
-<ng-container *ngFor="let trainingData of trainings">
-  <div class="box-card">
-    <div class="box-content">
-      <div class="training-type">
-        <h2>{{ trainingData.type }}</h2>
-        <fa-icon [icon]="faEllipsisVertical"></fa-icon>
-      </div>
-  
-      <ng-template #defaultImage>
+  <ng-container *ngFor="let trainingData of trainings; let i = index">
+    <div class="box-card">
+      <div class="box-content">
+        <div class="training-type">
+          <h2>{{ trainingData.type }}</h2>
+          <div class="card-menu">
+            <fa-icon [icon]="faEllipsisVertical" (click)="toggleMenu(i)"></fa-icon>
+            <div class="toggle-item" *ngIf="isMenuOpened[i]" (click)="toggleMenu(i)">
+              <div>Edit</div>
+              <div>Delete</div>
+            </div>
+          </div>
+        </div>
+        
+        <ng-template #defaultImage>
+          <img
+            src="../../../../assets/image/default/thumb.svg"
+            alt="default thumbnail image"
+          />
+        </ng-template>
+    
         <img
-          src="../../../../assets/image/default/thumb.svg"
-          alt="default thumbnail image"
+          [src]="trainingData.cover"
+          [alt]=""
+          class="card-img"
+          *ngIf="trainingData.cover; else defaultImage"
         />
-      </ng-template>
-  
-      <img
-        [src]="trainingData.cover"
-        [alt]=""
-        class="card-img"
-        *ngIf="trainingData.cover; else defaultImage"
-      />
-      <div class="date">
-        <p>{{ trainingData.date }}</p>
-        <p>{{ trainingData.duration }} Hours</p>
-      </div>
-      <div class="description">
-        <h3>{{ trainingData.employeeCode }}</h3>
-        <p>{{ trainingData.brands }}</p>
-        <p>{{ trainingData.distriPartner }}</p>
-        <p>{{ trainingData.details }}</p>
+        <div class="date">
+          <p>{{ trainingData.date }}</p>
+          <p>{{ trainingData.duration }} Hours</p>
+        </div>
+        <div class="description">
+          <h3>{{ trainingData.employeeCode }}</h3>
+          <p>{{ trainingData.brands }}</p>
+          <p>{{ trainingData.distriPartner }}</p>
+          <p>{{ trainingData.details }}</p>
+        </div>
+
       </div>
     </div>
-  </div>
-</ng-container>
+  </ng-container>
 
-<div class="add__training">
-  <div class="plus">
-    <fa-icon [icon]="faPlus"></fa-icon>
+  <div class="add__training">
+    <div class="plus">
+      <fa-icon [icon]="faPlus"></fa-icon>
+    </div>
   </div>
-</div>
-
 </div>
