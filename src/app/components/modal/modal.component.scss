@@ -1,5 +1,6 @@
 .modal-overlay {
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
@@ -64,4 +65,27 @@ button.open-modal-button {
 
 button.open-modal-button:hover {
   background-color: #007bff;
+}
+
+.add__training{
+  border: 1px solid var(--border-color);
+  border-radius: .75rem;
+  box-shadow: var(--general-shadow);
+  height: 24.5rem;
+
+  &:hover .plus{
+    transform: scale(1.1);
+    transition: .4s ease;
+  }
+
+  .plus{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 10rem;
+    opacity: .5;
+    color: var(--border-color);
+    cursor: pointer;
+  }
 }
