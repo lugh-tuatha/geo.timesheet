@@ -1,7 +1,11 @@
+.timesheet-container{
+  padding: 1rem 2.5rem;
+}
 .timesheet-heading{
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+  width: 90%;
   .profile{
     width: 25%;
     text-align: center;
