@@ -19,5 +19,4 @@ export class SidebarComponent {
   faBusinessTime = Fa.faBusinessTime;
   faLightbulb = Fa.faLightbulb;
   faHouse = Fa.faHouse;
-
 }
