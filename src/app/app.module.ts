@@ -22,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ModalComponent } from './components/modal/modal.component';
+import { PrivateComponent } from './private/private.component';
+import { PublicModule } from './public/public.module';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { ModalComponent } from './components/modal/modal.component';
     ButtonComponent,
     ChartComponent,
     ModalComponent,
+    PrivateComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { ModalComponent } from './components/modal/modal.component';
     FontAwesomeModule,
     NgChartsModule,
     SweetAlert2Module.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    PublicModule
   ],
   providers: [],
   bootstrap: [AppComponent]
