@@ -14,6 +14,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { PrivateComponent } from './private/private.component';
 import { PublicModule } from './public/public.module';
 import { SharedModule } from './shared/shared.module';
+import { PrivateModule } from './private/private.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     SharedModule,
     PublicModule,
+    PrivateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
