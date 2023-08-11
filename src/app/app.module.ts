@@ -15,27 +15,28 @@ import { PrivateComponent } from './private/private.component';
 import { PublicModule } from './public/public.module';
 import { SharedModule } from './shared/shared.module';
 import { PrivateModule } from './private/private.module';
+import { ButtonModule } from '@ui';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DashboardComponent,
-    TimesheetComponent,
-    SummaryComponent,
-    LoginComponent,
-    PrivateComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FontAwesomeModule,
-    SweetAlert2Module.forRoot(),
-    HttpClientModule,
-    SharedModule,
-    PublicModule,
-    PrivateModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        DashboardComponent,
+        TimesheetComponent,
+        SummaryComponent,
+        LoginComponent,
+        PrivateComponent,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FontAwesomeModule,
+        SweetAlert2Module.forRoot(),
+        HttpClientModule,
+        SharedModule,
+        PublicModule,
+        PrivateModule,
+    ]
 })
 export class AppModule { }

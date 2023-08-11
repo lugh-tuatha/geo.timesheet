@@ -4,25 +4,24 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './components/footer/footer.component';
-import { ButtonComponent } from './components/button/button.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { ButtonModule } from '@ui';
 
 @NgModule({
   declarations: [
     SidebarComponent,
     HeaderComponent,
     FooterComponent,
-    ButtonComponent,
     MainLayoutComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
   ],
   exports: [
     SidebarComponent,
     HeaderComponent,
     FooterComponent,
-    ButtonComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    ButtonModule
   ],
   imports: [
     CommonModule,

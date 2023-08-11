@@ -13,6 +13,7 @@ import { TableComponent } from './components/table/table.component';
 import { CardComponent } from './components/card/card.component';
 import { TrainingsComponent } from './pages/trainings/trainings.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { ButtonModule } from '@ui';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ModalComponent } from './components/modal/modal.component';
     PublicRoutingModule,
     SharedModule,
     NgChartsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ButtonModule
   ]
 })
 export class PublicModule { }
