@@ -73,11 +73,6 @@ button.open-modal-button:hover {
   box-shadow: var(--general-shadow);
   height: 24.5rem;
 
-  &:hover .plus{
-    transform: scale(1.1);
-    transition: .4s ease;
-  }
-
   .plus{
     display: flex;
     align-items: center;
@@ -87,5 +82,6 @@ button.open-modal-button:hover {
     opacity: .5;
     color: var(--border-color);
     cursor: pointer;
+    font-size: sma;
   }
 }

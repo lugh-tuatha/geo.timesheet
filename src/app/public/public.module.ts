@@ -14,6 +14,7 @@ import { CardComponent } from './components/card/card.component';
 import { TrainingsComponent } from './pages/trainings/trainings.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ButtonModule } from '@ui';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ButtonModule } from '@ui';
     SharedModule,
     NgChartsModule,
     FontAwesomeModule,
-    ButtonModule
+    ButtonModule,
+    FormsModule
   ]
 })
 export class PublicModule { }

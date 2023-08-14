@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { HttpClient } from '@angular/common/http'
+import { TrainingDataService } from '../../services/training-data/training-data.service';
+ 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
@@ -16,5 +19,19 @@ export class ModalComponent {
 
   closeModal() {
     this.isModalOpen = false;
+  }
+
+  trainings: any;
+  constructor(private trainingData: TrainingDataService){
+    this.trainingData.trainings().subscribe((data) => {
+       this.trainings = data;
+    })
+  }
+
+  postTraining(data:any){
+    console.warn(data);
+    this.trainingData.saveTraining(data).subscribe((result) => {
+      console.warn(result)
+    })
   }
 }

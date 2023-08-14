@@ -1,7 +1,12 @@
 <div class="modal-overlay" *ngIf="isModalOpen">
   <div class="modal-container">
-    <h2>Geoplan Philippines</h2>
-    <p>This is the modal content.</p>
+    <form #trainingForm="ngForm" (ngSubmit)="postTraining(trainingForm.value)">
+      <input type="text" ngModel name="type" placeholder="Enter Type">
+      <br>
+      <input type="text" name="data" placeholder="Enter date">
+
+      <input type="submit" value="submit">
+    </form>
     <button (click)="closeModal()">Close</button>
   </div>
 </div>
