@@ -1,13 +1,21 @@
 <div class="modal-overlay" *ngIf="isModalOpen">
   <div class="modal-container">
-    <form #trainingForm="ngForm" (ngSubmit)="postTraining(trainingForm.value)">
-      <input type="text" ngModel name="type" placeholder="Enter Type">
-      <br>
-      <input type="text" name="data" placeholder="Enter date">
+    <div class="flex justify-between items-center">
+      <h1 class="opacity-60">Create New Training</h1>
+      <fa-icon [icon]="faXmark" (click)="closeModal()" class="opacity-60 text-2xl cursor-pointer"></fa-icon>
+    </div>
 
-      <input type="submit" value="submit">
+    <form #trainingForm="ngForm" (ngSubmit)="postTraining(trainingForm.value)">
+      <input type="text" ngModel name="type" placeholder="Enter Type" class="modal-input">
+      <input type="text" ngModel name="date" placeholder="Enter date" class="modal-input">
+      <input type="text" ngModel name="duration" placeholder="Actual hours" class="modal-input">
+      <input type="text" ngModel name="employeeCode" placeholder="Employee Code" class="modal-input">
+      <input type="text" ngModel name="brands" placeholder="Brands" class="modal-input">
+      <input type="text" ngModel name="distriPartner" placeholder="Distri Partner" class="modal-input">
+      <input type="text" ngModel name="details" placeholder="details" class="modal-input">
+
+      <input type="submit" value="submit" class="bg-blue-400 px-4 py-2 rounded-md cursor-pointer text-white">
     </form>
-    <button (click)="closeModal()">Close</button>
   </div>
 </div>
 

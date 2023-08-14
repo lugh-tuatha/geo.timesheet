@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { HttpClient } from '@angular/common/http'
 import { TrainingDataService } from '../../services/training-data/training-data.service';
  
@@ -10,6 +10,8 @@ import { TrainingDataService } from '../../services/training-data/training-data.
 })
 export class ModalComponent {
   faPlus = faPlus;
+  faXmark = faXmark;
+
 
   isModalOpen: boolean = false;
 
