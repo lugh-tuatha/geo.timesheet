@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TimesheetRoutingModule } from './timesheet-routing.module';
 import { TimesheetComponent } from './pages/timesheet/timesheet.component';
-import { MainLayoutModule } from 'src/app/shared/layout/main-layout/main-layout.module';
+import { MainLayoutModule } from '@layout/main-layout/main-layout.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TimesheetTableComponent } from './components/timesheet-table/timesheet-table.component';
 import { AvatarModule } from '@ui';

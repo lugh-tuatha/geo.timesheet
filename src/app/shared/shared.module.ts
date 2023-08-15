@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AppRoutingModule } from '../app-routing.module';
 import { ButtonModule } from '@ui';
-import { MainLayoutModule } from './layout/main-layout/main-layout.module';
+import { MainLayoutModule } from '@layout/main-layout/main-layout.module';
 
 @NgModule({
     declarations: [

@@ -5,7 +5,7 @@ import { DashboardComponent } from './modules/dashboard/pages/dashboard/dashboar
 import { SummaryComponent } from './pages/summary/summary.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TimesheetComponent } from './modules/timesheet/pages/timesheet/timesheet.component';
-import { TrainingsComponent } from './pages/trainings/trainings.component';
+import { TrainingsComponent } from './modules/trainings/pages/trainings/trainings.component';
 
 const routes: Routes = [
   { path: 'kpi', component: KpiComponent },

@@ -25,7 +25,8 @@
     ],
     "paths": {
       "@ui": ["src/app/shared/ui"],
-      "@ui/*": ["src/app/shared/ui/*"]
+      "@ui/*": ["src/app/shared/ui/*"],
+      "@layout/*": ["src/app/shared/layout/*"],
     }
   },
   "angularCompilerOptions": {

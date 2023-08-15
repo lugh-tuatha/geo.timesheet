@@ -44,7 +44,6 @@ export class CardComponent {
   }
 
   closeMenu(): void {
-    // Close all menus
     this.isMenuOpened = this.isMenuOpened.map(() => false);
   }
 }
