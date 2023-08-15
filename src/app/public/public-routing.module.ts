@@ -4,7 +4,7 @@ import { KpiComponent } from './pages/kpi/kpi.component';
 import { DashboardComponent } from './modules/dashboard/pages/dashboard/dashboard.component';
 import { SummaryComponent } from './pages/summary/summary.component';
 import { LoginComponent } from './pages/login/login.component';
-import { TimesheetComponent } from './pages/timesheet/timesheet.component';
+import { TimesheetComponent } from './modules/timesheet/pages/timesheet/timesheet.component';
 import { TrainingsComponent } from './pages/trainings/trainings.component';
 
 const routes: Routes = [

@@ -1,14 +1,14 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { TIMESHEET_TABLE } from 'src/app/data/timesheet-table-data';
 import { Timesheet } from 'src/app/public/models/timesheet';
 
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  selector: 'app-timesheet-table',
+  templateUrl: './timesheet-table.component.html',
+  styleUrls: ['./timesheet-table.component.scss']
 })
-export class TableComponent {
+export class TimesheetTableComponent {
   thead = TIMESHEET_TABLE;
   tvalue = TIMESHEET_TABLE.value;
 
