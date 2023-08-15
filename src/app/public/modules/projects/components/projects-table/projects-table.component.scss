@@ -1,0 +1,12 @@
+table, th, td{
+  border: 1px solid gray;
+}
+
+th{
+  background-color: yellow;
+}
+
+th, td{
+  padding: .5rem 1rem;
+  text-align: center;
+}

@@ -1,0 +1,22 @@
+<div>
+  <table>
+    <tr>
+      <th>SO No.</th>
+      <th>Customer</th>
+      <th>Project Name/Description</th>
+      <th>Total Hours</th>
+    </tr>
+    <tr>
+      <td>GEO</td>
+      <td>Geoplan Internal</td>
+      <td>Geoplan Internal (Overhead)</td>
+      <td>1,000.8</td>
+    </tr>
+    <tr *ngFor="let apptivo of apptivodata">
+      <td class="whitespace-nowrap">{{ apptivo.workOrderNumber }}</td>
+      <td>{{ apptivo.customer }}</td>
+      <td>{{ apptivo.projectDescription  }}</td>
+      <td>0</td>
+    </tr>
+  </table>
+</div>

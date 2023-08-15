@@ -15,6 +15,7 @@ import { TrainingsComponent } from './pages/trainings/trainings.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ButtonModule } from '@ui';
 import { FormsModule } from '@angular/forms';
+import { ProjectsModule } from './modules/projects/projects.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { FormsModule } from '@angular/forms';
     AvatarComponent,
     TableComponent,
     ModalComponent,
-    CardComponent
+    CardComponent,
   ],
   exports: [
     TableComponent,
@@ -33,7 +34,7 @@ import { FormsModule } from '@angular/forms';
     CardComponent,
     AvatarComponent,
     ModalComponent,
-    TableComponent
+    TableComponent,
   ],
   imports: [
     CommonModule,
@@ -42,7 +43,8 @@ import { FormsModule } from '@angular/forms';
     NgChartsModule,
     FontAwesomeModule,
     ButtonModule,
-    FormsModule
+    FormsModule,
+    ProjectsModule
   ]
 })
 export class PublicModule { }
