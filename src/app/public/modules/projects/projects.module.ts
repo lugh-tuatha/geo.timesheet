@@ -6,6 +6,7 @@ import { ProjectsTableComponent } from './components/projects-table/projects-tab
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { MainLayoutModule } from 'src/app/shared/layout/main-layout/main-layout.module';
 import { HttpClientModule } from '@angular/common/http'
+import { ChartComponent } from '../dashboard/components/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http'
     CommonModule,
     ProjectsRoutingModule,
     MainLayoutModule,
-    HttpClientModule
+    HttpClientModule,
   ]
 })
 export class ProjectsModule { }

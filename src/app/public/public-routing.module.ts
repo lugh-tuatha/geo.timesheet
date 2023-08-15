@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { KpiComponent } from './pages/kpi/kpi.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { DashboardComponent } from './modules/dashboard/pages/dashboard/dashboard.component';
 import { SummaryComponent } from './pages/summary/summary.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TimesheetComponent } from './pages/timesheet/timesheet.component';

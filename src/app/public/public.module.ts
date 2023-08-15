@@ -6,7 +6,6 @@ import { PublicComponent } from './public.component';
 import { SharedModule } from '../shared/shared.module';
 import { KpiComponent } from './pages/kpi/kpi.component';
 import { NgChartsModule } from 'ng2-charts';
-import { ChartComponent } from './components/chart/chart.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { TableComponent } from './components/table/table.component';
@@ -16,12 +15,12 @@ import { ModalComponent } from './components/modal/modal.component';
 import { ButtonModule } from '@ui';
 import { FormsModule } from '@angular/forms';
 import { ProjectsModule } from './modules/projects/projects.module';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
     PublicComponent,
     KpiComponent,
-    ChartComponent,  
     TrainingsComponent,  
     AvatarComponent,
     TableComponent,
@@ -30,7 +29,6 @@ import { ProjectsModule } from './modules/projects/projects.module';
   ],
   exports: [
     TableComponent,
-    ChartComponent,
     CardComponent,
     AvatarComponent,
     ModalComponent,
@@ -44,7 +42,8 @@ import { ProjectsModule } from './modules/projects/projects.module';
     FontAwesomeModule,
     ButtonModule,
     FormsModule,
-    ProjectsModule
+    ProjectsModule,
+    DashboardModule
   ]
 })
 export class PublicModule { }
