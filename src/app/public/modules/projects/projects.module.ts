@@ -7,11 +7,14 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { MainLayoutModule } from '@layout/main-layout/main-layout.module';
 import { HttpClientModule } from '@angular/common/http'
 import { ChartComponent } from '../dashboard/components/chart/chart.component';
+import { TotalHoursComponent } from './pages/total-hours/total-hours.component';
+import { AvatarModule } from '@ui';
 
 @NgModule({
   declarations: [
     ProjectsTableComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    TotalHoursComponent
   ],
   exports: [
     ProjectsComponent
@@ -21,6 +24,7 @@ import { ChartComponent } from '../dashboard/components/chart/chart.component';
     ProjectsRoutingModule,
     MainLayoutModule,
     HttpClientModule,
+    AvatarModule
   ]
 })
 export class ProjectsModule { }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TIMESHEET_TABLE } from 'src/app/data/timesheet-table-data';
-import { Timesheet } from 'src/app/public/models/timesheet';
+import { Timesheet } from 'src/app/public/modules/timesheet/models/timesheet';
 
 @Component({
   selector: 'app-timesheet-table',
