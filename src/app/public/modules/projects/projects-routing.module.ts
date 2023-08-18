@@ -5,7 +5,7 @@ import { TotalHoursComponent } from './pages/total-hours/total-hours.component';
 
 const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
-  { path: 'projects/geo/total-hours', component: TotalHoursComponent },
+  { path: 'projects/total-hours/geo', component: TotalHoursComponent },
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Training } from 'src/app/public/models/training';
+import { Training } from '../../models/training' 
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { HttpClient } from '@angular/common/http';

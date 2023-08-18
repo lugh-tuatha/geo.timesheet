@@ -12,7 +12,6 @@ export class HeaderComponent {
   faRightFromBracket = Fa.faRightFromBracket;
   faRightToBracket = Fa.faRightToBracket;
 
-
   isLoggedIn(): boolean {
     return false;
   }

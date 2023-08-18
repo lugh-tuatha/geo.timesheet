@@ -22,9 +22,9 @@ export class TimesheetTableComponent {
   constructor(private http: HttpClient) {}
 
   timesheet: Timesheet[] = [];
-  ngOnInit(){
-    this.http.get<any>('http://localhost:9000/geo/api/v1/timesheet').subscribe((response: any) => {
-      this.timesheet = response.data.findTimesheet
+  ngOnInit(){ // http://localhost:9000/geo/api/v1/timesheet = for mongodb
+    this.http.get<any>('http://localhost:3000/api/v1/timesheet').subscribe((response: any) => {
+      this.timesheet = response.data.timesheet
       console.log('Received data:', this.timesheet);
     });
   }
