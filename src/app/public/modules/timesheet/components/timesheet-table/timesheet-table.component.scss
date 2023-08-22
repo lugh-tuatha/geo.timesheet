@@ -4,19 +4,32 @@ table, tr, th, td{
 }
 
 th, td{
-  padding: .4rem .75rem;
+  padding: .75rem;
 }
 
 table{
   width: auto;
   text-align: center;
 
+  td{
+    text-align: center;
+    font-weight: 300;
+    input{
+      outline: none;
+      width: 5.5rem;
+    }
+  }
+
   th.for-admin{
     background-color: var(--non-editable);
   }
 
-  .table-head th:nth-child(5){
-    padding:  .4rem 2rem;
+  .table-head{
+    th{
+      white-space: nowrap;
+      font-weight: 200;
+      font-size: .75rem;
+    }
   }
 
   .location-dropdown{

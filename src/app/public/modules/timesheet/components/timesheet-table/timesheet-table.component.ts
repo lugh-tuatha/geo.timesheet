@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TIMESHEET_TABLE } from 'src/app/data/timesheet-table-data';
 import { Timesheet } from 'src/app/public/modules/timesheet/models/timesheet';
 
 @Component({
@@ -9,9 +8,6 @@ import { Timesheet } from 'src/app/public/modules/timesheet/models/timesheet';
   styleUrls: ['./timesheet-table.component.scss']
 })
 export class TimesheetTableComponent {
-  thead = TIMESHEET_TABLE;
-  tvalue = TIMESHEET_TABLE.value;
-
   thClass(forAdmin: boolean) {
     if (forAdmin) {
       return 'for-admin'; 

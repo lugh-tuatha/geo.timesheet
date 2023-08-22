@@ -1,29 +1,22 @@
 <div class="overflow-x-scroll border border-black p-1">
   <table>
-    <tr class="table-head">
-      <th 
-        [ngClass]="thClass(timesheetTable.forAdmin)"
-        *ngFor="let timesheetTable of thead">
-        {{ timesheetTable.tableHead }}
-      </th>
+    <tr class="table-head bg-gray-200">
+      <th>Projects</th>
+      <th>Mon, Aug 21</th>
+      <th>Tue, Aug 22</th>
+      <th>Wed, Aug 23</th>
+      <th>Thu, Aug 24</th>
+      <th>Fri, Aug 25</th>
+      <th>Sat, Aug 26</th>
+      <th>Sun, Aug 27</th>
+      <th>Total</th>
     </tr>
     
     <ng-container *ngFor="let timesheetData of timesheet">
       <tr>
         <td>
-          <input type="checkbox" [checked]="timesheetData.isChecked" disabled>
-        </td>
-        <td>{{ timesheetData.approvedBy }}</td>
-        <td>
-          <input type="checkbox" [checked]="timesheetData.isOT" disabled>
-        </td>
-        <td>
-          <input type="checkbox" [checked]="timesheetData.isND" disabled>
-        </td>
-        <td>{{ timesheetData.date }}</td>
-        <td>
           <select class="location-dropdown" >
-            <option selected disabled hidden>{{timesheetData.location}}</option>
+            <option selected disabled hidden>{{ timesheetData.projects }}</option>
             <option value="OFC-DW">OFC-DW</option>
             <option value="OFC-ND">OFC-ND</option>
             <option value="FLD">FLD</option>
@@ -31,18 +24,41 @@
             <option value="LVE">LVE</option>
           </select>
         </td>
-        <td>{{ timesheetData.project }}</td>
+        
         <td>
-          <textarea  class="table-input task" cols="40" rows="1" >{{ timesheetData.task }}</textarea>
+          <input type="text" [value]="timesheetData.mon">
         </td>
         <td>
-          <input type="text" class="table-input hour" [value]="timesheetData.actualHours">
+          <input type="text" [value]="timesheetData.tue">
         </td>
         <td>
-          {{ timesheetData.projectDescription }}
+          <input type="text" [value]="timesheetData.wed">
         </td>
-        <td>{{ timesheetData.weekNo }}</td>
+        <td>
+          <input type="text" [value]="timesheetData.thu">
+        </td>
+        <td>
+          <input type="text" [value]="timesheetData.fri">
+        </td>
+        <td>
+          <input type="text" [value]="timesheetData.sat">
+        </td>
+        <td>
+          <input type="text" [value]="timesheetData.sun">
+        </td>
       </tr>
     </ng-container>
+
+    <tr class="table-head bg-gray-200">
+      <th>Total:</th>
+      <th>00:08:00</th>
+      <th>00:07:00</th>
+      <th>00:08:00</th>
+      <th>00:01:00</th>
+      <th>00:03:00</th>
+      <th>00:06:00</th>
+      <th>00:02:00</th>
+      <th>00:20:00</th>
+    </tr>
   </table>
 </div>

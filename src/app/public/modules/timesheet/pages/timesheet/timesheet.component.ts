@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { User } from 'src/app/shared/models/User';
 
 @Component({
   selector: 'app-timesheet',
