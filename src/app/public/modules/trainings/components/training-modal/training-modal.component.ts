@@ -4,14 +4,13 @@ import { HttpClient } from '@angular/common/http'
 import { TrainingDataService } from '../../../../services/training-data/training-data.service';
  
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss'],
+  selector: 'app-training-modal',
+  templateUrl: './training-modal.component.html',
+  styleUrls: ['./training-modal.component.scss'],
 })
-export class ModalComponent {
+export class TrainingModalComponent{
   faPlus = faPlus;
   faXmark = faXmark;
-
 
   isModalOpen: boolean = false;
 
