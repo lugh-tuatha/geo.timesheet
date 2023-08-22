@@ -43,3 +43,52 @@
     background-color: var(--hover-bg);
   }
 }
+
+table, tr, th, td{
+  border: 1px solid var(--border-color);
+  border-collapse: collapse;
+}
+
+th, td{
+  padding: .75rem;
+}
+
+table{
+  width: auto;
+  text-align: center;
+
+  th.for-admin{
+    background-color: var(--non-editable);
+  }
+
+  .table-head{
+    th{
+      white-space: nowrap;
+      font-weight: 200;
+      font-size: .75rem;
+    }
+  }
+
+  .location-dropdown{
+    border: none;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  .table-input{
+    outline: none;
+    border: none;
+    font-size: 1rem;
+  }
+
+  .task{
+    display: flex;
+    align-items: center;  
+    resize: none;
+    overflow: hidden;
+  }
+
+  .hour{
+    width: 2rem;
+  }
+}

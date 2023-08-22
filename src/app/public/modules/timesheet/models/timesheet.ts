@@ -8,4 +8,5 @@ export interface Timesheet {
   fri: String,
   sat: String,
   sun: String,
+  total: String,
 }

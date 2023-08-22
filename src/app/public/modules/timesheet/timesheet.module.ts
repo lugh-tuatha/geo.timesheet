@@ -5,12 +5,11 @@ import { TimesheetRoutingModule } from './timesheet-routing.module';
 import { TimesheetComponent } from './pages/timesheet/timesheet.component';
 import { MainLayoutModule } from '@layout/main-layout/main-layout.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TimesheetTableComponent } from './components/timesheet-table/timesheet-table.component';
 import { AvatarModule } from '@ui';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
-    TimesheetTableComponent,
     TimesheetComponent,
   ],
   exports: [
@@ -21,7 +20,8 @@ import { AvatarModule } from '@ui';
     TimesheetRoutingModule,
     MainLayoutModule,
     FontAwesomeModule,
-    AvatarModule
+    AvatarModule,
+    HttpClientModule
   ]
 })
 export class TimesheetModule { }

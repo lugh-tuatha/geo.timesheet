@@ -21,8 +21,68 @@
       </div>
     </div>
 
-    <app-timesheet-table></app-timesheet-table>
-    <p class="add__table">
+    <!-- timesheet table start -->
+    <div class="overflow-x-scroll border border-black p-1">
+      <table>
+        <tr class="table-head bg-gray-200">        
+          <th>Edit</th>
+          <th>Projects</th>
+          <th>Mon, Aug 21</th>
+          <th>Tue, Aug 22</th>
+          <th>Wed, Aug 23</th>
+          <th>Thu, Aug 24</th>
+          <th>Fri, Aug 25</th>
+          <th>Sat, Aug 26</th>
+          <th>Sun, Aug 27</th>
+          <th>Total</th>
+          <th>Delete</th>
+        </tr>
+        
+       <ng-container *ngFor="let timesheetData of timesheet">
+          <tr>
+            <td>
+              <fa-icon [icon]="faPenToSquare" class="cursor-pointer"></fa-icon>
+            </td>
+            <td>
+              <select class="location-dropdown" >
+                <option selected disabled hidden>{{ timesheetData.projects }}</option>
+                <option value="OFC-DW">OFC-DW</option>
+                <option value="OFC-ND">OFC-ND</option>
+                <option value="FLD">FLD</option>
+                <option value="WFH">WFH</option>
+                <option value="LVE">LVE</option>
+              </select>
+            </td>
+            <td>{{ timesheetData.mon }}</td>
+            <td>{{ timesheetData.tue }}</td>
+            <td>{{ timesheetData.wed }}</td>
+            <td>{{ timesheetData.thu }}</td>
+            <td>{{ timesheetData.fri }}</td>
+            <td>{{ timesheetData.sat }}</td>
+            <td>{{ timesheetData.sun }}</td>
+            <td>{{ timesheetData.total }}</td>
+            <td>
+              <fa-icon [icon]="faTrash" class="text-red-600 cursor-pointer"></fa-icon>
+            </td>
+          </tr>
+        </ng-container>
+        <tr class="table-head bg-gray-200">
+          <th colspan="2">Total:</th>
+          <th>00:08:00</th>
+          <th>00:07:00</th>
+          <th>00:08:00</th>
+          <th>00:01:00</th>
+          <th>00:03:00</th>
+          <th>00:06:00</th>
+          <th>00:02:00</th>
+          <th>00:20:00</th>
+          <th></th>
+        </tr>
+      </table>
+    </div>
+    <!-- timesheet table end -->
+
+    <p (click)="createNewRow1()" class="add__table">
       Add table
       <fa-icon [icon]="faPlus"></fa-icon>
     </p>
