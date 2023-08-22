@@ -62,7 +62,7 @@
             <td>{{ timesheetData.sun }}</td>
             <td>{{ timesheetData.total }}</td>
             <td>
-              <fa-icon [icon]="faTrash" class="text-red-600 cursor-pointer"></fa-icon>
+              <fa-icon [icon]="faTrash" class="text-red-600 cursor-pointer" [swal]="deleteSwal"></fa-icon>
             </td>
           </tr>
         </ng-container>
@@ -81,6 +81,14 @@
       </table>
     </div>
     <!-- timesheet table end -->
+    <swal
+      #deleteSwal
+      title="Are you sure?"
+      text="This cannot be undone"
+      icon="question"
+      [showCancelButton]="true">
+      [focusCancel]="true"
+    </swal>
 
     <p (click)="createNewRow1()" class="add__table">
       Add table

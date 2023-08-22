@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { PublicRoutingModule } from './public-routing.module';
 import { PublicComponent } from './public.component';
@@ -30,7 +31,8 @@ import { TrainingsModule } from './modules/trainings/trainings.module';
     ProjectsModule,
     DashboardModule,
     TimesheetModule,
-    TrainingsModule
+    TrainingsModule,
+    SweetAlert2Module.forRoot(),
   ]
 })
 export class PublicModule { }

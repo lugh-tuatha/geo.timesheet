@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { TimesheetRoutingModule } from './timesheet-routing.module';
 import { TimesheetComponent } from './pages/timesheet/timesheet.component';
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     MainLayoutModule,
     FontAwesomeModule,
     AvatarModule,
-    HttpClientModule
+    HttpClientModule,
+    SweetAlert2Module.forRoot(),
   ]
 })
 export class TimesheetModule { }
