@@ -38,7 +38,7 @@
           <th>Delete</th>
         </tr>
         
-       <ng-container *ngFor="let timesheetData of timesheet">
+       <ng-container *ngFor="let timesheetData of timesheet; let i = index">
           <tr>
             <td>
               <fa-icon [icon]="faPenToSquare" class="cursor-pointer"></fa-icon>
@@ -62,7 +62,8 @@
             <td>{{ timesheetData.sun }}</td>
             <td>{{ timesheetData.total }}</td>
             <td>
-              <fa-icon [icon]="faTrash" class="text-red-600 cursor-pointer" [swal]="deleteSwal"></fa-icon>
+              <fa-icon [icon]="faTrash" class="text-red-600 cursor-pointer" 
+              (click)="showDeleteConfirmation(i)"></fa-icon>
             </td>
           </tr>
         </ng-container>
@@ -88,8 +89,9 @@
       title="Are you sure?"
       text="This cannot be undone"
       icon="question"
-      [showCancelButton]="true">
+      [showCancelButton]="true"
       [focusCancel]="true"
+      (confirm)="deleteRow()">
     </swal>
 
     <p (click)="createNewRow1()" class="add__table">

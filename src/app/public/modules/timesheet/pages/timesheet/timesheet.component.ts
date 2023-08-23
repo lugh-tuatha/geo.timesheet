@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { faPlus, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { TimesheetServiceService } from '../../services/timesheet-service/timesheet-service.service';
 import { HttpClient } from '@angular/common/http';
@@ -58,5 +58,21 @@ export class TimesheetComponent {
       total: "",
     })
     //call backend to save data
+  }
+
+  @ViewChild('deleteSwal') deleteSwal: any;
+
+  deleteRowIndex: number = -1;
+
+  showDeleteConfirmation(index: number) {
+    this.deleteRowIndex = index;
+    this.deleteSwal.fire();
+  }
+
+  deleteRow() {
+    if (this.deleteRowIndex >= 0 && this.deleteRowIndex < this.timesheet.length) {
+      this.timesheet.splice(this.deleteRowIndex, 1);
+      this.deleteRowIndex = -1; // Reset stored index
+    }
   }
 }
