@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { faPlus, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faPenToSquare, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { TimesheetServiceService } from '../../services/timesheet-service/timesheet-service.service';
 import { HttpClient } from '@angular/common/http';
 import { Timesheet } from 'src/app/public/modules/timesheet/models/timesheet';
@@ -13,6 +13,7 @@ export class TimesheetComponent {
   faPlus = faPlus;
   faPenToSquare = faPenToSquare;
   faTrash = faTrash;
+  faXmark = faXmark;
 
   timesheetData: any = [];
   timesheet: Timesheet[] = [];
@@ -74,5 +75,15 @@ export class TimesheetComponent {
       this.timesheet.splice(this.deleteRowIndex, 1);
       this.deleteRowIndex = -1; // Reset stored index
     }
+  }
+
+  isModalOpen: boolean = false;
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
   }
 }

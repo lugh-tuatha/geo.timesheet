@@ -92,3 +92,29 @@ table{
     width: 2rem;
   }
 }
+
+.timesheet-modal{
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+
+  label{
+    font-weight: 300;
+  }
+
+  input{
+    border: 1px solid #ccc;
+    border-radius: .25rem;
+    outline: none;
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+  }
+}

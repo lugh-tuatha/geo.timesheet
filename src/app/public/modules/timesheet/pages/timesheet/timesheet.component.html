@@ -41,7 +41,7 @@
        <ng-container *ngFor="let timesheetData of timesheet; let i = index">
           <tr>
             <td>
-              <fa-icon [icon]="faPenToSquare" class="cursor-pointer"></fa-icon>
+              <fa-icon [icon]="faPenToSquare" class="cursor-pointer" (click)="openModal()"></fa-icon>
             </td>
             <td>
               <select class="location-dropdown" >
@@ -98,5 +98,49 @@
       Add table
       <fa-icon [icon]="faPlus"></fa-icon>
     </p>
+    
+    <div class="timesheet-modal" *ngIf="isModalOpen">
+      <div class="border border-gray-200 rounded-lg w-1/2 bg-white px-6 py-4">
+        <div class="flex items-center justify-between">
+          <h1>EDITING [Project Name]</h1>
+          <fa-icon [icon]="faXmark" class="cursor-pointer opacity-70 text-2xl" (click)="closeModal()"></fa-icon>
+        </div>
+
+        <label>PROJECTS:</label>
+        <select class="mb-2 border border-blue-400 w-full rounded-lg py-2 outline-none">
+          <option selected disabled hidden>GEO</option>
+          <option value="OFC-DW">OFC-DW</option>
+          <option value="OFC-ND">OFC-ND</option>
+          <option value="FLD">FLD</option>
+          <option value="WFH">WFH</option>
+          <option value="LVE">LVE</option>
+        </select>
+      
+        <div class="flex flex-col">
+          <label>Mon, Aug 21</label>
+          <input type="text">
+        
+          <label>Tue, Aug 22</label>
+          <input type="text">
+        
+          <label>Wed, Aug 23</label>
+          <input type="text">
+        
+          <label>Thu, Aug 24</label>
+          <input type="text">
+        
+          <label>Fri, Aug 25</label>
+          <input type="text">
+        
+          <label>Sat, Aug 26</label>
+          <input type="text">
+        
+          <label>Sun, Aug 27</label>
+          <input type="text">
+        </div>
+        
+        <app-button>Save changes</app-button>
+      </div>
+    </div>
   </div>
 </app-main-layout>

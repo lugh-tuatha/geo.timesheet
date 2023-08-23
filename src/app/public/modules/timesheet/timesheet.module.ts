@@ -6,8 +6,9 @@ import { TimesheetRoutingModule } from './timesheet-routing.module';
 import { TimesheetComponent } from './pages/timesheet/timesheet.component';
 import { MainLayoutModule } from '@layout/main-layout/main-layout.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AvatarModule } from '@ui';
-import { HttpClientModule } from '@angular/common/http'; 
+import { AvatarModule, ButtonModule } from '@ui';
+import { HttpClientModule } from '@angular/common/http';
+import { ButtonComponent } from '@ui/button/button/button.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     AvatarModule,
     HttpClientModule,
     SweetAlert2Module.forRoot(),
+    ButtonModule
   ]
 })
 export class TimesheetModule { }
