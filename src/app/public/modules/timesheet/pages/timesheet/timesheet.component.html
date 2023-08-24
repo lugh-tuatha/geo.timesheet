@@ -94,11 +94,12 @@
       (confirm)="deleteRow()">
     </swal>
 
-    <p (click)="createNewRow1()" class="add__table">
+    <p (click)="createNewRow()" class="add__table">
       Add table
       <fa-icon [icon]="faPlus"></fa-icon>
     </p>
     
+    <!-- modal start -->
     <div class="timesheet-modal" *ngIf="isModalOpen">
       <div class="border border-gray-200 rounded-lg w-1/2 bg-white px-6 py-4">
         <div class="flex items-center justify-between">
@@ -107,7 +108,7 @@
         </div>
 
         <label>PROJECTS:</label>
-        <select class="mb-2 border border-blue-400 w-full rounded-lg py-2 outline-none">
+        <select class="mb-2 border border-blue-400 w-full rounded-lg py-2 outline-none" name="projects">
           <option selected disabled hidden>GEO</option>
           <option value="OFC-DW">OFC-DW</option>
           <option value="OFC-ND">OFC-ND</option>
@@ -116,31 +117,27 @@
           <option value="LVE">LVE</option>
         </select>
       
-        <div class="flex flex-col">
+        <form class="flex flex-col">
           <label>Mon, Aug 21</label>
-          <input type="text">
-        
+          <input type="text" name="mon">
           <label>Tue, Aug 22</label>
-          <input type="text">
-        
+          <input type="text" name="tue">
           <label>Wed, Aug 23</label>
-          <input type="text">
-        
+          <input type="text" name="wed">
           <label>Thu, Aug 24</label>
-          <input type="text">
-        
+          <input type="text" name="thu">
           <label>Fri, Aug 25</label>
-          <input type="text">
-        
+          <input type="text" name="fri">
           <label>Sat, Aug 26</label>
-          <input type="text">
-        
+          <input type="text" name="sat">
           <label>Sun, Aug 27</label>
-          <input type="text">
-        </div>
+          <input type="text" name="sun">
+        </form>
         
         <app-button>Save changes</app-button>
       </div>
     </div>
+    <!-- modal end -->
+
   </div>
 </app-main-layout>

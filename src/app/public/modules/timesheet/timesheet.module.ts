@@ -9,6 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AvatarModule, ButtonModule } from '@ui';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonComponent } from '@ui/button/button/button.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ButtonComponent } from '@ui/button/button/button.component';
     AvatarModule,
     HttpClientModule,
     SweetAlert2Module.forRoot(),
-    ButtonModule
+    ButtonModule,
+    FormsModule
   ]
 })
 export class TimesheetModule { }

@@ -23,29 +23,18 @@ export class TimesheetComponent {
     private http: HttpClient
   ) { }
 
-  ngOnInit() {
-    this.http.get<any>('http://localhost:3000/api/v1/timesheet').subscribe((response: any) => {
+  ngOnInit() { // postgre = http://localhost:3000/api/v1/timesheet
+    this.http.get<any>('http://localhost:9000/geo/api/v1/timesheet').subscribe((response: any) => {
       this.timesheet = response.data.timesheet;
       console.log(response.data);
       console.log('Received data:', this.timesheet);
     });
   }// End on InitcreateNewRow
   
-  createNewRow() {
-    this.timesheetServiceService.addRow().subscribe(
-      response => {
-        console.log('Response:', response);
-      },
-      error => {
-        console.error('Error:', error);
-      }
-    )
-  }
-
   // Trello-0001
   // SW-INC120912
   // GT-91029120912
-  createNewRow1() {
+  createNewRow() {
     this.timesheet.push({
       id: 12,
       projects: "",
@@ -61,6 +50,7 @@ export class TimesheetComponent {
     //call backend to save data
   }
 
+  /*------------------------ Delete row ------------------------*/
   @ViewChild('deleteSwal') deleteSwal: any;
 
   deleteRowIndex: number = -1;
@@ -77,6 +67,7 @@ export class TimesheetComponent {
     }
   }
 
+  /*------------ Toggle Modal ------------*/
   isModalOpen: boolean = false;
 
   openModal() {
