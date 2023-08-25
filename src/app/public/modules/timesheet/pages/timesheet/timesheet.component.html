@@ -41,7 +41,7 @@
        <ng-container *ngFor="let timesheetData of timesheet; let i = index">
           <tr>
             <td>
-              <fa-icon [icon]="faPenToSquare" class="cursor-pointer" (click)="openModal()"></fa-icon>
+              <fa-icon [icon]="faPenToSquare" class="cursor-pointer" (click)="openModal()" (click)="onEditClicked(timesheetData._id)"></fa-icon>
             </td>
             <td>
               <select class="location-dropdown" >
@@ -116,23 +116,25 @@
           <option value="WFH">WFH</option>
           <option value="LVE">LVE</option>
         </select>
-      
-        <form class="flex flex-col">
-          <label>Mon, Aug 21</label>
-          <input type="text" name="mon">
-          <label>Tue, Aug 22</label>
-          <input type="text" name="tue">
-          <label>Wed, Aug 23</label>
-          <input type="text" name="wed">
-          <label>Thu, Aug 24</label>
-          <input type="text" name="thu">
-          <label>Fri, Aug 25</label>
-          <input type="text" name="fri">
-          <label>Sat, Aug 26</label>
-          <input type="text" name="sat">
-          <label>Sun, Aug 27</label>
-          <input type="text" name="sun">
-        </form>
+        
+        <ng-container>
+          <form #timesheetEditForm="ngForm" class="flex flex-col">
+            <label>Mon, Aug 21</label>
+            <input type="text" name="mon" ngModel>
+            <label>Tue, Aug 22</label>
+            <input type="text" name="tue" ngModel>
+            <label>Wed, Aug 23</label>
+            <input type="text" name="wed" ngModel>
+            <label>Thu, Aug 24</label>
+            <input type="text" name="thu" ngModel>
+            <label>Fri, Aug 25</label>
+            <input type="text" name="fri" ngModel>
+            <label>Sat, Aug 26</label>
+            <input type="text" name="sat" ngModel>
+            <label>Sun, Aug 27</label>
+            <input type="text" name="sun" ngModel>
+          </form>
+        </ng-container>
         
         <app-button>Save changes</app-button>
       </div>

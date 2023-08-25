@@ -1,8 +1,9 @@
-import { Component, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { faPlus, faPenToSquare, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { TimesheetServiceService } from '../../services/timesheet-service/timesheet-service.service';
 import { HttpClient } from '@angular/common/http';
 import { Timesheet } from 'src/app/public/modules/timesheet/models/timesheet';
+import { FormBuilder, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-timesheet',
@@ -18,15 +19,25 @@ export class TimesheetComponent {
   timesheetData: any = [];
   timesheet: Timesheet[] = [];
 
+  /*------------ Toggle Modal ------------*/
+  isModalOpen: boolean = false;
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+  }
+
   constructor(
     private timesheetServiceService: TimesheetServiceService,
-    private http: HttpClient
+    private http: HttpClient,
   ) { }
 
   ngOnInit() { // postgre = http://localhost:3000/api/v1/timesheet
     this.http.get<any>('http://localhost:9000/geo/api/v1/timesheet').subscribe((response: any) => {
       this.timesheet = response.data.timesheet;
-      console.log(response.data);
       console.log('Received data:', this.timesheet);
     });
   }// End on InitcreateNewRow
@@ -36,7 +47,7 @@ export class TimesheetComponent {
   // GT-91029120912
   createNewRow() {
     this.timesheet.push({
-      id: 12,
+      _id: 12,
       projects: "",
       mon: "",
       tue: "",
@@ -67,14 +78,18 @@ export class TimesheetComponent {
     }
   }
 
-  /*------------ Toggle Modal ------------*/
-  isModalOpen: boolean = false;
-
-  openModal() {
-    this.isModalOpen = true;
-  }
-
-  closeModal() {
-    this.isModalOpen = false;
+  /*------------------------ Edit row ------------------------*/
+  onEditClicked(_id: Number){
+    let currentTimesheet = this.timesheet.find((t) => {return t._id === _id})
+    console.log(currentTimesheet)
+    // this.form.setValue({
+    //   mon: "11:11:11",
+    //   tue: "11:11:11",
+    //   wed: "11:11:11",  
+    //   thu: "11:11:11",
+    //   fri: "11:11:11",
+    //   sat: "11:11:11",
+    //   sun: "11:11:11",
+    // })
   }
 }

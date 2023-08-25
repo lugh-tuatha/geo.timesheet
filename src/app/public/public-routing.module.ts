@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { KpiComponent } from './pages/kpi/kpi.component';
 import { DashboardComponent } from './modules/dashboard/pages/dashboard/dashboard.component';
 import { SummaryComponent } from './pages/summary/summary.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -8,7 +7,6 @@ import { TimesheetComponent } from './modules/timesheet/pages/timesheet/timeshee
 import { TrainingsComponent } from './modules/trainings/pages/trainings/trainings.component';
 
 const routes: Routes = [
-  { path: 'kpi', component: KpiComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'summary', component: SummaryComponent },
   { path: '', component: LoginComponent },
