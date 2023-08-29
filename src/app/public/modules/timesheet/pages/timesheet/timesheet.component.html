@@ -100,25 +100,26 @@
     </p>
     
     <!-- modal start -->
-    <div class="timesheet-modal" *ngIf="isModalOpen">
+    <!-- add = *ngIf="isModalOpen" -->
+    <div class="timesheet-modal" >
       <div class="border border-gray-200 rounded-lg w-1/2 bg-white px-6 py-4">
         <div class="flex items-center justify-between">
           <h1>EDITING [Project Name]</h1>
           <fa-icon [icon]="faXmark" class="cursor-pointer opacity-70 text-2xl" (click)="closeModal()"></fa-icon>
         </div>
-
-        <label>PROJECTS:</label>
-        <select class="mb-2 border border-blue-400 w-full rounded-lg py-2 outline-none" name="projects">
-          <option selected disabled hidden>GEO</option>
-          <option value="OFC-DW">OFC-DW</option>
-          <option value="OFC-ND">OFC-ND</option>
-          <option value="FLD">FLD</option>
-          <option value="WFH">WFH</option>
-          <option value="LVE">LVE</option>
-        </select>
         
         <ng-container>
-          <form #timesheetEditForm="ngForm" class="flex flex-col">
+          <form #timesheetEditForm="ngForm" (ngSubmit)="onTimesheetUpdate(timesheetEditForm.value)" class="flex flex-col">
+            <label>PROJECTS:</label>
+            <select class="mb-2 border border-blue-400 w-full rounded-lg py-2 outline-none" name="projects" ngModel>
+              <option selected disabled hidden>GEO</option>
+              <option value="OFC-DW">OFC-DW</option>
+              <option value="OFC-ND">OFC-ND</option>
+              <option value="FLD">FLD</option>
+              <option value="WFH">WFH</option>
+              <option value="LVE">LVE</option>
+            </select>
+            
             <label>Mon, Aug 21</label>
             <input type="text" name="mon" ngModel>
             <label>Tue, Aug 22</label>
@@ -133,10 +134,9 @@
             <input type="text" name="sat" ngModel>
             <label>Sun, Aug 27</label>
             <input type="text" name="sun" ngModel>
+            <app-button type="submit">Save changes</app-button>
           </form>
         </ng-container>
-        
-        <app-button>Save changes</app-button>
       </div>
     </div>
     <!-- modal end -->

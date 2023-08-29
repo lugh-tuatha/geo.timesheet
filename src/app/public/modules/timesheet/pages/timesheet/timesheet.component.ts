@@ -18,6 +18,10 @@ export class TimesheetComponent {
 
   timesheetData: any = [];
   timesheet: Timesheet[] = [];
+  editMode: boolean = false;
+  currentTimesheetId: any;
+
+  @ViewChild('timesheetEditForm') form!: NgForm;
 
   /*------------ Toggle Modal ------------*/
   isModalOpen: boolean = false;
@@ -80,16 +84,38 @@ export class TimesheetComponent {
 
   /*------------------------ Edit row ------------------------*/
   onEditClicked(_id: Number){
+    this.currentTimesheetId = _id
     let currentTimesheet = this.timesheet.find((t) => {return t._id === _id})
-    console.log(currentTimesheet)
-    // this.form.setValue({
-    //   mon: "11:11:11",
-    //   tue: "11:11:11",
-    //   wed: "11:11:11",  
-    //   thu: "11:11:11",
-    //   fri: "11:11:11",
-    //   sat: "11:11:11",
-    //   sun: "11:11:11",
-    // })
+    // console.log(currentTimesheet)
+    this.form.setValue({
+      projects: currentTimesheet?.projects,
+      mon: currentTimesheet?.mon,
+      tue: currentTimesheet?.tue,
+      wed: currentTimesheet?.wed,  
+      thu: currentTimesheet?.thu,
+      fri: currentTimesheet?.fri,
+      sat: currentTimesheet?.sat,
+      sun: currentTimesheet?.sun,
+    })
+
+    this.editMode = true;
+  }
+
+  onTimesheetUpdate(timesheet: {
+    _id: Number,
+    projects: String,
+    mon: string, 
+    tue: string, 
+    wed: string, 
+    thu: string, 
+    fri: string, 
+    sat: string, 
+    sun: string,
+    total: string }){
+    if(!this.editMode){
+
+    }else{
+      this.timesheetServiceService.updateTimesheet(this.currentTimesheetId, timesheet)
+    }
   }
 }
