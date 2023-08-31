@@ -4,6 +4,8 @@ import { TimesheetServiceService } from '../../services/timesheet-service/timesh
 import { HttpClient } from '@angular/common/http';
 import { Timesheet } from 'src/app/public/modules/timesheet/models/timesheet';
 import { FormBuilder, NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '@ui/modal/modal/modal.component';
 
 @Component({
   selector: 'app-timesheet',
@@ -22,20 +24,10 @@ export class TimesheetComponent {
   currentTimesheetId: any;
 
   @ViewChild('timesheetEditForm') form!: NgForm;
-
-  /*------------ Toggle Modal ------------*/
-  isModalOpen: boolean = false;
-
-  openModal() {
-    this.isModalOpen = true;
-  }
-
-  closeModal() {
-    this.isModalOpen = false;
-  }
-
+  
   constructor(
     private timesheetServiceService: TimesheetServiceService,
+    private dialog: MatDialog,
     private http: HttpClient,
   ) { }
 
@@ -83,39 +75,23 @@ export class TimesheetComponent {
   }
 
   /*------------------------ Edit row ------------------------*/
-  onEditClicked(_id: Number){
-    this.currentTimesheetId = _id
-    let currentTimesheet = this.timesheet.find((t) => {return t._id === _id})
-    // console.log(currentTimesheet)
-    this.form.setValue({
-      projects: currentTimesheet?.projects,
-      mon: currentTimesheet?.mon,
-      tue: currentTimesheet?.tue,
-      wed: currentTimesheet?.wed,  
-      thu: currentTimesheet?.thu,
-      fri: currentTimesheet?.fri,
-      sat: currentTimesheet?.sat,
-      sun: currentTimesheet?.sun,
-    })
 
-    this.editMode = true;
+  // material modal
+  editTimesheet(_id: any){
+    this.openModal(_id, 'Edit data')
   }
 
-  onTimesheetUpdate(timesheet: {
-    _id: Number,
-    projects: String,
-    mon: string, 
-    tue: string, 
-    wed: string, 
-    thu: string, 
-    fri: string, 
-    sat: string, 
-    sun: string,
-    total: string }){
-    if(!this.editMode){
+  openModal(_id:any,title:any){
+    let _popup = this.dialog.open(ModalComponent, {
+      width: '600px',
+      data: {
+        title: title,
+        _id: _id
+      }
+    })
 
-    }else{
-      this.timesheetServiceService.updateTimesheet(this.currentTimesheetId, timesheet)
-    }
+    _popup.afterClosed().subscribe(item => {
+      console.log(item)
+    })
   }
 }

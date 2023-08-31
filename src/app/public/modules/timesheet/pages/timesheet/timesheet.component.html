@@ -41,7 +41,8 @@
        <ng-container *ngFor="let timesheetData of timesheet; let i = index">
           <tr>
             <td>
-              <fa-icon [icon]="faPenToSquare" class="cursor-pointer" (click)="openModal()" (click)="onEditClicked(timesheetData._id)"></fa-icon>
+              <!--  (click)="onEditClicked(timesheetData._id)" --> 
+              <fa-icon [icon]="faPenToSquare" class="cursor-pointer" (click)="editTimesheet(timesheetData._id)" mat-riased-button></fa-icon>
             </td>
             <td>
               <select class="location-dropdown" >
@@ -98,48 +99,5 @@
       Add table
       <fa-icon [icon]="faPlus"></fa-icon>
     </p>
-    
-    <!-- modal start -->
-    <!-- add = *ngIf="isModalOpen" -->
-    <div class="timesheet-modal" >
-      <div class="border border-gray-200 rounded-lg w-1/2 bg-white px-6 py-4">
-        <div class="flex items-center justify-between">
-          <h1>EDITING [Project Name]</h1>
-          <fa-icon [icon]="faXmark" class="cursor-pointer opacity-70 text-2xl" (click)="closeModal()"></fa-icon>
-        </div>
-        
-        <ng-container>
-          <form #timesheetEditForm="ngForm" (ngSubmit)="onTimesheetUpdate(timesheetEditForm.value)" class="flex flex-col">
-            <label>PROJECTS:</label>
-            <select class="mb-2 border border-blue-400 w-full rounded-lg py-2 outline-none" name="projects" ngModel>
-              <option selected disabled hidden>GEO</option>
-              <option value="OFC-DW">OFC-DW</option>
-              <option value="OFC-ND">OFC-ND</option>
-              <option value="FLD">FLD</option>
-              <option value="WFH">WFH</option>
-              <option value="LVE">LVE</option>
-            </select>
-            
-            <label>Mon, Aug 21</label>
-            <input type="text" name="mon" ngModel>
-            <label>Tue, Aug 22</label>
-            <input type="text" name="tue" ngModel>
-            <label>Wed, Aug 23</label>
-            <input type="text" name="wed" ngModel>
-            <label>Thu, Aug 24</label>
-            <input type="text" name="thu" ngModel>
-            <label>Fri, Aug 25</label>
-            <input type="text" name="fri" ngModel>
-            <label>Sat, Aug 26</label>
-            <input type="text" name="sat" ngModel>
-            <label>Sun, Aug 27</label>
-            <input type="text" name="sun" ngModel>
-            <app-button type="submit">Save changes</app-button>
-          </form>
-        </ng-container>
-      </div>
-    </div>
-    <!-- modal end -->
-
   </div>
 </app-main-layout>

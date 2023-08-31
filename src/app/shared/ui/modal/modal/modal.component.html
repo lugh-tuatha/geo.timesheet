@@ -1,0 +1,48 @@
+<form [formGroup]="timesheetForm" (ngSubmit)="saveTimesheet()">
+  <h1 mat-dialog-title>{{ inputdata.title }}</h1>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>projects</mat-label>
+      <input matInput formControlName="projects" name="projects">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Mon</mat-label>
+      <input matInput formControlName="mon">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>tue</mat-label>
+      <input matInput formControlName="tue">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>wed</mat-label>
+      <input matInput formControlName="wed">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>thu</mat-label>
+      <input matInput formControlName="thu">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>fri</mat-label>
+      <input matInput formControlName="fri">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>sat</mat-label>
+      <input matInput formControlName="sat">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>sun</mat-label>
+      <input matInput formControlName="sun">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary">Save Changes</button>
+    <button (click)="closeModal()" mat-raised-button color="warn">Close</button>
+  </div>
+</form>

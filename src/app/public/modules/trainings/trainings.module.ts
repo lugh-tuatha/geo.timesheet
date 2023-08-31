@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { TrainingModalComponent } from './components/training-modal/training-modal.component';
 import { HttpClientModule } from '@angular/common/http'
+import { MatFormField } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http'
     MainLayoutModule,
     FontAwesomeModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ]
 })
 export class TrainingsModule { }

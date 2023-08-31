@@ -9,7 +9,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AvatarModule, ButtonModule } from '@ui';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonComponent } from '@ui/button/button/button.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MatDialogModule } from '@angular/material/dialog'; 
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     SweetAlert2Module.forRoot(),
     ButtonModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatFormFieldModule
   ]
 })
 export class TimesheetModule { }
