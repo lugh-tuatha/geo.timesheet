@@ -1,12 +1,27 @@
-table, th, td{
+/*table,
+th,
+td {
   border: 1px solid gray;
 }
 
-th{
+th {
   background-color: yellow;
 }
 
-th, td{
-  padding: .5rem 1rem;
+th,
+td {
+  padding: 0.5rem 1rem;
   text-align: center;
+}*/
+
+.demo-table {
+  width: 100%;
+}
+
+.demo-button-container {
+  padding-bottom: 16px;
+}
+
+.demo-button + .demo-button {
+  margin-left: 8px;
 }

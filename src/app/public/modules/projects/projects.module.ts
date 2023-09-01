@@ -12,7 +12,6 @@ import { AvatarModule } from '@ui';
 
 @NgModule({
   declarations: [
-    ProjectsTableComponent,
     ProjectsComponent,
     TotalHoursComponent
   ],
@@ -20,6 +19,7 @@ import { AvatarModule } from '@ui';
     ProjectsComponent
   ],
   imports: [
+    ProjectsTableComponent,
     CommonModule,
     ProjectsRoutingModule,
     MainLayoutModule,
