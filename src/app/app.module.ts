@@ -14,9 +14,9 @@ import { PrivateComponent } from './private/private.component';
 import { PublicModule } from './public/public.module';
 import { SharedModule } from './shared/shared.module';
 import { PrivateModule } from './private/private.module';
-import { ButtonModule } from '@ui';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormField } from '@angular/material/form-field';
+import { MaterialModule } from './material.module';
 
 @NgModule({
     declarations: [
@@ -37,6 +37,7 @@ import { MatFormField } from '@angular/material/form-field';
         PublicModule,
         PrivateModule,
         BrowserAnimationsModule,
+        MaterialModule
     ]
 })
 export class AppModule { }

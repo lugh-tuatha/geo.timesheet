@@ -1,7 +1,6 @@
 import { ApptivoServiceService } from '../../services/apptivo-service/apptivo-service.service';
 import { Component, ViewChild } from '@angular/core';
-import { MatTable, MatTableModule } from '@angular/material/table';
-import { MatButtonModule } from '@angular/material/button';
+import { MatTable} from '@angular/material/table';
 
 export interface PeriodicElement {
   workOrderNumber: string;
@@ -23,8 +22,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   selector: 'app-projects-table',
   templateUrl: './projects-table.component.html',
   styleUrls: ['./projects-table.component.scss'],
-  standalone: true,
-  imports: [MatButtonModule, MatTableModule],
 })
 export class ProjectsTableComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];

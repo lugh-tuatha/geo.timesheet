@@ -6,13 +6,9 @@ import { TimesheetRoutingModule } from './timesheet-routing.module';
 import { TimesheetComponent } from './pages/timesheet/timesheet.component';
 import { MainLayoutModule } from '@layout/main-layout/main-layout.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AvatarModule, ButtonModule } from '@ui';
+import { AvatarModule, ButtonModule, ModalModule } from '@ui';
 import { HttpClientModule } from '@angular/common/http';
-import { ButtonComponent } from '@ui/button/button/button.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { MatDialogModule } from '@angular/material/dialog'; 
-import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,8 +27,7 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
     SweetAlert2Module.forRoot(),
     ButtonModule,
     FormsModule,
-    MatDialogModule,
-    MatFormFieldModule
+    ModalModule
   ]
 })
 export class TimesheetModule { }

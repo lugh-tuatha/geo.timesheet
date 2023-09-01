@@ -1,32 +1,7 @@
-<!--<div>
-  <table>
-    <tr>
-      <th>SO No.</th>
-      <th>Customer</th>
-      <th>Project Name/Description</th>
-      <th>Total Hours</th>
-    </tr>
-    <tr>
-      <td>GEO</td>
-      <td>Geoplan Internal</td>
-      <td>Geoplan Internal (Overhead)</td>
-      <td><a routerLink="/projects/geo/total-hours">1,000.8</a></td>
-    </tr>
-    <tr *ngFor="let apptivo of apptivodata">
-      <td class="whitespace-nowrap">{{ apptivo.workOrderNumber }}</td>
-      <td>{{ apptivo.customer }}</td>
-      <td>{{ apptivo.projectDescription }}</td>
-      <td><a routerLink="/projects/geo/total-hours">0</a></td>
-    </tr>
-  </table>
-</div> 
--->
-
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <!-- Position Column -->
   <ng-container matColumnDef="position">
     <th mat-header-cell *matHeaderCellDef>SO No.</th>
-    <td mat-cell *matCellDef="let element">{{ element.workOrderNumber }}</td>
+    <td mat-cell *matCellDef="let element" class="whitespace-nowrap">{{ element.workOrderNumber }}</td>
   </ng-container>
 
   <ng-container matColumnDef="name">
@@ -41,7 +16,7 @@
 
   <ng-container matColumnDef="symbol">
     <th mat-header-cell *matHeaderCellDef>Total Hours</th>
-    <td mat-cell *matCellDef="let element">{{ element.hours }}</td>
+    <td mat-cell *matCellDef="let element" routerLink="/projects/geo/total-hours">{{ element.hours }}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
