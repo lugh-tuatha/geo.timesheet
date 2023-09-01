@@ -11,6 +11,7 @@ import { TimesheetServiceService } from 'src/app/public/modules/timesheet/servic
 export class ModalComponent implements OnInit {
   inputdata:any;
   editData: any;
+  editMode: boolean = false;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data:any,
@@ -21,7 +22,13 @@ export class ModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.inputdata=this.data;
-    this.setpopupdata(this.inputdata._id)
+
+    if(this.inputdata._id === 0){
+      // do nothing      
+    }else{
+      this.setpopupdata(this.inputdata._id)
+      this.editMode = true;
+    }
   }
 
   closeModal(){
@@ -59,7 +66,6 @@ export class ModalComponent implements OnInit {
   saveTimesheet(){
     console.log(this.timesheetForm.value);
     const editedFormData = this.timesheetForm.value;
-
     const timesheetId = this.editData.data.timesheet._id;
 
     this.timesheetServiceService.updateTimesheet(timesheetId, editedFormData).subscribe(
@@ -73,5 +79,19 @@ export class ModalComponent implements OnInit {
         // Handle error cases if needed
       }
     );
+  }
+
+  addTimesheet(){
+    this.timesheetServiceService.saveTimesheetEntry(this.timesheetForm.value).subscribe(res => {
+      this.closeModal();
+    })
+  }
+
+  onClickSave(){
+    if(this.editMode === true){
+      this.saveTimesheet()
+    }else{
+      this.addTimesheet()
+    }
   }
 }

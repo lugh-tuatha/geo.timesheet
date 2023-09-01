@@ -21,6 +21,10 @@
       </div>
     </div>
 
+    <p (click)="addTimesheet()" class="add__table mb-2">
+      Add record
+      <fa-icon [icon]="faPlus"></fa-icon>
+    </p>
     <!-- timesheet table start -->
     <div class="overflow-x-scroll border border-black p-1">
       <table>
@@ -94,10 +98,5 @@
       [focusCancel]="true"
       (confirm)="deleteRow()">
     </swal>
-
-    <p (click)="createNewRow()" class="add__table">
-      Add table
-      <fa-icon [icon]="faPlus"></fa-icon>
-    </p>
   </div>
 </app-main-layout>

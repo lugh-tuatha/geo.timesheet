@@ -1,9 +1,8 @@
-import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { faPlus, faPenToSquare, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons';
-import { TimesheetServiceService } from '../../services/timesheet-service/timesheet-service.service';
 import { HttpClient } from '@angular/common/http';
 import { Timesheet } from 'src/app/public/modules/timesheet/models/timesheet';
-import { FormBuilder, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '@ui/modal/modal/modal.component';
 
@@ -20,41 +19,22 @@ export class TimesheetComponent {
 
   timesheetData: any = [];
   timesheet: Timesheet[] = [];
-  editMode: boolean = false;
   currentTimesheetId: any;
 
   @ViewChild('timesheetEditForm') form!: NgForm;
   
   constructor(
-    private timesheetServiceService: TimesheetServiceService,
     private dialog: MatDialog,
     private http: HttpClient,
-  ) { }
+  ) { 
+    this.loadTimesheet()
+  }
 
-  ngOnInit() { // postgre = http://localhost:3000/api/v1/timesheet
+  loadTimesheet(){ // postgre = http://localhost:3000/api/v1/timesheet
     this.http.get<any>('http://localhost:9000/geo/api/v1/timesheet').subscribe((response: any) => {
       this.timesheet = response.data.timesheet;
       console.log('Received data:', this.timesheet);
     });
-  }// End on InitcreateNewRow
-  
-  // Trello-0001
-  // SW-INC120912
-  // GT-91029120912
-  createNewRow() {
-    this.timesheet.push({
-      _id: 12,
-      projects: "",
-      mon: "",
-      tue: "",
-      wed: "",  
-      thu: "",
-      fri: "",
-      sat: "",
-      sun: "",
-      total: "",
-    })
-    //call backend to save data
   }
 
   /*------------------------ Delete row ------------------------*/
@@ -74,8 +54,12 @@ export class TimesheetComponent {
     }
   }
 
-  /*------------------------ Edit row ------------------------*/
+  /*------------------------ Add entry ------------------------*/
+  addTimesheet(){
+    this.openModal(0, 'Add data')
+  }
 
+  /*------------------------ Edit row ------------------------*/
   // material modal
   editTimesheet(_id: any){
     this.openModal(_id, 'Edit data')
@@ -91,7 +75,7 @@ export class TimesheetComponent {
     })
 
     _popup.afterClosed().subscribe(item => {
-      console.log(item)
+      this.loadTimesheet()
     })
   }
 }
