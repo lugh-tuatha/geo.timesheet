@@ -6,7 +6,7 @@ import { TimesheetRoutingModule } from './timesheet-routing.module';
 import { TimesheetComponent } from './pages/timesheet/timesheet.component';
 import { MainLayoutModule } from '@layout/main-layout/main-layout.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AvatarModule, ButtonModule, ModalModule } from '@ui';
+import { AvatarModule, ButtonModule, ModalModule, TableModule } from '@ui';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -27,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     SweetAlert2Module.forRoot(),
     ButtonModule,
     FormsModule,
-    ModalModule
+    ModalModule,
+    TableModule
   ]
 })
 export class TimesheetModule { }

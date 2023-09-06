@@ -1,5 +1,5 @@
 export interface Timesheet {
-  _id: Number,
+  _id: any,
   projects: String,
   mon: String,
   tue: String,
