@@ -5,6 +5,9 @@ import { Timesheet } from 'src/app/public/modules/timesheet/models/timesheet';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '@ui/modal/modal/modal.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { TimesheetServiceService } from '../../services/timesheet-service/timesheet-service.service';
 
 @Component({
   selector: 'app-timesheet',
@@ -20,12 +23,16 @@ export class TimesheetComponent {
   timesheetData: any = [];
   timesheet: Timesheet[] = [];
   currentTimesheetId: any;
+  dataSource: any;
+  displayedColumns: string[] = ["edit", "projects", "mon", "tue", "wed", "thu", "fri", "sat", "sun", "delete"]
 
   @ViewChild('timesheetEditForm') form!: NgForm;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   
   constructor(
     private dialog: MatDialog,
     private http: HttpClient,
+    private timesheetServiceService: TimesheetServiceService,
   ) { 
     this.loadTimesheet()
   }
@@ -33,26 +40,27 @@ export class TimesheetComponent {
   loadTimesheet(){ // postgre = http://localhost:3000/api/v1/timesheet
     this.http.get<any>('http://localhost:9000/geo/api/v1/timesheet').subscribe((response: any) => {
       this.timesheet = response.data.timesheet;
-      console.log('Received data:', this.timesheet);
+      this.dataSource = new MatTableDataSource<Timesheet>(this.timesheet);
+      this.dataSource.paginator = this.paginator
     });
   }
+  
 
   /*------------------------ Delete row ------------------------*/
   @ViewChild('deleteSwal') deleteSwal: any;
 
-  deleteRowIndex: number = -1;
+  deleteId: any;
 
-  showDeleteConfirmation(index: number) {
-    this.deleteRowIndex = index;
+  showDeleteConfirmation(_id: any) {
     this.deleteSwal.fire();
+    deleteID: _id;
   }
 
-  deleteRow() {
-    if (this.deleteRowIndex >= 0 && this.deleteRowIndex < this.timesheet.length) {
-      this.timesheet.splice(this.deleteRowIndex, 1);
-      this.deleteRowIndex = -1; // Reset stored index
-    }
+  deleteRow(deleteID: any) {
+    this.http.delete('http://localhost:9000/geo/api/v1/timesheet/' + deleteID).subscribe();
+    this.loadTimesheet()
   }
+  
 
   /*------------------------ Add entry ------------------------*/
   addTimesheet(){
@@ -77,5 +85,10 @@ export class TimesheetComponent {
     _popup.afterClosed().subscribe(item => {
       this.loadTimesheet()
     })
+  }
+
+  Filterchange(data:Event){
+    const value=(data.target as HTMLInputElement).value;
+    this.dataSource.filter = value
   }
 }

@@ -9,6 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AvatarModule, ButtonModule, ModalModule, TableModule } from '@ui';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from 'src/app/material.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { FormsModule } from '@angular/forms';
     ButtonModule,
     FormsModule,
     ModalModule,
-    TableModule
+    MaterialModule
   ]
 })
 export class TimesheetModule { }

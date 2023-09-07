@@ -28,4 +28,8 @@ export class TimesheetServiceService {
   getTimesheetById(_id: any) {
     return this.http.get("http://localhost:9000/geo/api/v1/timesheet/" + _id)
   }
+
+  deleteTimesheetEntry(_id: any) {
+    return this.http.delete("http://localhost:9000/geo/api/v1/timesheet/" + _id)
+  }
 }

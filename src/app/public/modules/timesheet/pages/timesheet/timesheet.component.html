@@ -21,84 +21,98 @@
       </div>
     </div>
 
-    <p (click)="addTimesheet()" class="add__table mb-2">
-      Add record
-      <fa-icon [icon]="faPlus"></fa-icon>
-    </p>
     <!-- timesheet table start -->
-    <div class="overflow-x-scroll border border-black p-1">
-      <table>
-        <tr class="table-head bg-gray-200">        
-          <th>Edit</th>
-          <th>Projects</th>
-          <th>Mon, Aug 21</th>
-          <th>Tue, Aug 22</th>
-          <th>Wed, Aug 23</th>
-          <th>Thu, Aug 24</th>
-          <th>Fri, Aug 25</th>
-          <th>Sat, Aug 26</th>
-          <th>Sun, Aug 27</th>
-          <th>Total</th>
-          <th>Delete</th>
-        </tr>
+    <mat-card>
+      <mat-card-header>
+        <div class="mb-2 flex w-full justify-between items-center">
+          <div class="demo-button-container">
+            <button mat-raised-button (click)="addTimesheet()" class="demo-button">
+              Add record
+            </button>
+          </div>
+  
+          <input (keyup)="Filterchange($event)" placeholder="Search" class="outline-none px-4 py-2 rounded-md border border-gray-300 shadow-md font-normal">
+        </div>
+      </mat-card-header>
+      
+      <mat-card-content class="overflow-x-scroll">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+          <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef>Edit</th>
+            <td mat-cell *matCellDef="let element">
+              <fa-icon [icon]="faPenToSquare" class="cursor-pointer mx-auto" (click)="editTimesheet(element._id)" mat-riased-button></fa-icon>
+            </td>
+          </ng-container>
         
-       <ng-container *ngFor="let timesheetData of timesheet; let i = index">
-          <tr>
-            <td>
-              <!--  (click)="onEditClicked(timesheetData._id)" --> 
-              <fa-icon [icon]="faPenToSquare" class="cursor-pointer" (click)="editTimesheet(timesheetData._id)" mat-riased-button></fa-icon>
-            </td>
-            <td>
-              <select class="location-dropdown" >
-                <option selected disabled hidden>{{ timesheetData.projects }}</option>
-                <option value="OFC-DW">OFC-DW</option>
-                <option value="OFC-ND">OFC-ND</option>
-                <option value="FLD">FLD</option>
-                <option value="WFH">WFH</option>
-                <option value="LVE">LVE</option>
-              </select>
-            </td>
-            <td>{{ timesheetData.mon }}</td>
-            <td>{{ timesheetData.tue }}</td>
-            <td>{{ timesheetData.wed }}</td>
-            <td>{{ timesheetData.thu }}</td>
-            <td>{{ timesheetData.fri }}</td>
-            <td>{{ timesheetData.sat }}</td>
-            <td>{{ timesheetData.sun }}</td>
-            <td>{{ timesheetData.total }}</td>
-            <td>
+          <ng-container matColumnDef="projects">
+            <th mat-header-cell *matHeaderCellDef>Projects</th>
+            <td mat-cell *matCellDef="let element">{{ element.projects }}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="mon">
+            <th mat-header-cell *matHeaderCellDef>mon</th>
+            <td mat-cell *matCellDef="let element">{{ element.mon }}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="tue">
+            <th mat-header-cell *matHeaderCellDef>tue</th>
+            <td mat-cell *matCellDef="let element">{{ element.tue }}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="wed">
+            <th mat-header-cell *matHeaderCellDef>wed</th>
+            <td mat-cell *matCellDef="let element">{{ element.wed }}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="thu">
+            <th mat-header-cell *matHeaderCellDef>thu</th>
+            <td mat-cell *matCellDef="let element">{{ element.thu }}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="fri">
+            <th mat-header-cell *matHeaderCellDef>fri</th>
+            <td mat-cell *matCellDef="let element">{{ element.fri }}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="sat">
+            <th mat-header-cell *matHeaderCellDef>sat</th>
+            <td mat-cell *matCellDef="let element">{{ element.sat }}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="sun">
+            <th mat-header-cell *matHeaderCellDef>sun</th>
+            <td mat-cell *matCellDef="let element">{{ element.sun }}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="delete" >
+            <th mat-header-cell *matHeaderCellDef>Delete</th>
+            <td mat-cell *matCellDef="let element; index as i">
               <fa-icon [icon]="faTrash" class="text-red-600 cursor-pointer" 
-              (click)="showDeleteConfirmation(i)"></fa-icon>
+              (click)="showDeleteConfirmation(element._id)"></fa-icon>
+
+              <!-- swal - delete -->
+              <swal
+                #deleteSwal
+                title="Are you sure?"
+                text="This cannot be undone"
+                icon="question"
+                [showCancelButton]="true"
+                [focusCancel]="true"
+                (confirm)="deleteRow(element._id)"
+                >
+              </swal>
             </td>
-          </tr>
-        </ng-container>
-        <tr class="table-head bg-gray-200">
-          <th colspan="2">Total:</th>
-          <th>00:08:00</th>
-          <th>00:07:00</th>
-          <th>00:08:00</th>
-          <th>00:01:00</th>
-          <th>00:03:00</th>
-          <th>00:06:00</th>
-          <th>00:02:00</th>
-          <th>00:20:00</th>
-          <th></th>
-        </tr>
-      </table>
-    </div>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
+        </table>
+      </mat-card-content>
+    
+      <mat-card-footer>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </mat-card-footer>
+    </mat-card>
     <!-- timesheet table end -->
-
-    <app-table></app-table>
-
-    <!-- swal - delete -->
-    <swal
-      #deleteSwal
-      title="Are you sure?"
-      text="This cannot be undone"
-      icon="question"
-      [showCancelButton]="true"
-      [focusCancel]="true"
-      (confirm)="deleteRow()">
-    </swal>
   </div>
 </app-main-layout>

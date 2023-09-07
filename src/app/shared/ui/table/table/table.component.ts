@@ -2,9 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Timesheet } from 'src/app/public/modules/timesheet/models/timesheet';
 import { HttpClient } from '@angular/common/http'
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
 
 
 @Component({
@@ -13,8 +11,6 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
-  faTrash = faTrash;
-
   dataSource: any;
   timesheetList: Timesheet[] = [];
   displayedColumns: string[] = ["edit", "projects", "mon", "tue", "wed", "thu", "fri", "sat", "sun", "delete"]
@@ -30,7 +26,6 @@ export class TableComponent {
     this.http.get<any>('http://localhost:9000/geo/api/v1/timesheet').subscribe((response: any) => {
       this.timesheetList = response.data.timesheet;
       this.dataSource = new MatTableDataSource<Timesheet>(this.timesheetList);
-      console.log('Received data data from table:', this.timesheetList);
       this.dataSource.paginator = this.paginator
     });
   }
@@ -39,5 +34,4 @@ export class TableComponent {
     const value=(data.target as HTMLInputElement).value;
     this.dataSource.filter = value
   }
-
 }
