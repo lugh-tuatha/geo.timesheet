@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TimesheetServiceService } from 'src/app/public/modules/timesheet/services/timesheet-service/timesheet-service.service';
-
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
@@ -12,6 +12,8 @@ export class ModalComponent implements OnInit {
   inputdata:any;
   editData: any;
   editMode: boolean = false;
+  Projects = "";
+  faXmark = faXmark;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data:any,
@@ -33,6 +35,7 @@ export class ModalComponent implements OnInit {
 
   closeModal(){
     this.ref.close("closed")
+    console.log("sarado")
   }
 
   setpopupdata(_id: any) {
@@ -41,6 +44,7 @@ export class ModalComponent implements OnInit {
 
       this.timesheetForm.setValue({
         projects: this.editData.data.timesheet.projects,
+        description: this.editData.data.timesheet.description,
         mon: this.editData.data.timesheet.mon, 
         tue: this.editData.data.timesheet.tue,
         wed: this.editData.data.timesheet.wed,
@@ -48,12 +52,14 @@ export class ModalComponent implements OnInit {
         fri: this.editData.data.timesheet.fri,
         sat: this.editData.data.timesheet.sat,
         sun: this.editData.data.timesheet.sun,
+        total: this.editData.data.timesheet.total,
       });
     });
   }
   
   timesheetForm = this.formBuilder.group({
     projects:this.formBuilder.control(""),
+    description:this.formBuilder.control(""),
     mon:this.formBuilder.control(""),
     tue:this.formBuilder.control(""),
     wed:this.formBuilder.control(""),
@@ -61,6 +67,7 @@ export class ModalComponent implements OnInit {
     fri:this.formBuilder.control(""),
     sat:this.formBuilder.control(""),
     sun:this.formBuilder.control(""),
+    total:this.formBuilder.control(""),
   })
 
   saveTimesheet(){
@@ -71,12 +78,10 @@ export class ModalComponent implements OnInit {
     this.timesheetServiceService.updateTimesheet(timesheetId, editedFormData).subscribe(
       (response) => {
         console.log("Timesheet updated successfully!", response);
-        // Close the dialog or handle other UI changes as needed
         this.closeModal();
       },
       (error) => {
         console.error("Error updating timesheet:", error);
-        // Handle error cases if needed
       }
     );
   }

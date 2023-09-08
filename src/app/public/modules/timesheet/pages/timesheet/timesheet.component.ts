@@ -24,7 +24,7 @@ export class TimesheetComponent {
   timesheet: Timesheet[] = [];
   currentTimesheetId: any;
   dataSource: any;
-  displayedColumns: string[] = ["edit", "projects", "mon", "tue", "wed", "thu", "fri", "sat", "sun", "delete"]
+  displayedColumns: string[] = ["edit", "projects", "description", "mon", "tue", "wed", "thu", "fri", "sat", "sun", "total", "delete"]
 
   @ViewChild('timesheetEditForm') form!: NgForm;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -44,23 +44,21 @@ export class TimesheetComponent {
       this.dataSource.paginator = this.paginator
     });
   }
-  
 
   /*------------------------ Delete row ------------------------*/
   @ViewChild('deleteSwal') deleteSwal: any;
 
   deleteId: any;
 
-  showDeleteConfirmation(_id: any) {
+  deleteRow(_id: any) {
+    this.deleteId = _id;
     this.deleteSwal.fire();
-    deleteID: _id;
-  }
-
-  deleteRow(deleteID: any) {
-    this.http.delete('http://localhost:9000/geo/api/v1/timesheet/' + deleteID).subscribe();
-    this.loadTimesheet()
   }
   
+  confirmDelete(){
+    this.http.delete('http://localhost:9000/geo/api/v1/timesheet/' + this.deleteId).subscribe();
+    this.loadTimesheet()
+  }
 
   /*------------------------ Add entry ------------------------*/
   addTimesheet(){

@@ -46,12 +46,21 @@
         
           <ng-container matColumnDef="projects">
             <th mat-header-cell *matHeaderCellDef>Projects</th>
-            <td mat-cell *matCellDef="let element">{{ element.projects }}</td>
+            <td mat-cell *matCellDef="let element" class="whitespace-nowrap">{{ element.projects }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td mat-cell *matCellDef="let element" class="whitespace-nowrap desc">{{ element.description }}</td>
           </ng-container>
         
           <ng-container matColumnDef="mon">
             <th mat-header-cell *matHeaderCellDef>mon</th>
-            <td mat-cell *matCellDef="let element">{{ element.mon }}</td>
+            <td mat-cell *matCellDef="let element">
+              <div>
+                {{ element.mon }}
+              </div>
+            </td>
           </ng-container>
         
           <ng-container matColumnDef="tue">
@@ -76,19 +85,24 @@
         
           <ng-container matColumnDef="sat">
             <th mat-header-cell *matHeaderCellDef>sat</th>
-            <td mat-cell *matCellDef="let element">{{ element.sat }}</td>
+            <td mat-cell *matCellDef="let element" class="weekend">{{ element.sat }}</td>
           </ng-container>
         
           <ng-container matColumnDef="sun">
             <th mat-header-cell *matHeaderCellDef>sun</th>
-            <td mat-cell *matCellDef="let element">{{ element.sun }}</td>
+            <td mat-cell *matCellDef="let element" class="weekend">{{ element.sun }}</td>
           </ng-container>
-        
+
+          <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef>total</th>
+            <td mat-cell *matCellDef="let element">{{ element.total }}</td>
+          </ng-container>
+
           <ng-container matColumnDef="delete" >
             <th mat-header-cell *matHeaderCellDef>Delete</th>
             <td mat-cell *matCellDef="let element; index as i">
               <fa-icon [icon]="faTrash" class="text-red-600 cursor-pointer" 
-              (click)="showDeleteConfirmation(element._id)"></fa-icon>
+              (click)="deleteRow(element._id)"></fa-icon>
 
               <!-- swal - delete -->
               <swal
@@ -98,11 +112,12 @@
                 icon="question"
                 [showCancelButton]="true"
                 [focusCancel]="true"
-                (confirm)="deleteRow(element._id)"
+                (confirm)="confirmDelete()"
                 >
               </swal>
             </td>
           </ng-container>
+ 
         
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
