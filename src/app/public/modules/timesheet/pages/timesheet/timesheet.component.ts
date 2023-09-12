@@ -71,7 +71,7 @@ export class TimesheetComponent {
     this.openModal(_id, 'Edit data')
   }
 
-  openModal(_id:any,title:any){
+  openModal(_id:any,title:String){
     let _popup = this.dialog.open(ModalComponent, {
       width: '600px',
       data: {

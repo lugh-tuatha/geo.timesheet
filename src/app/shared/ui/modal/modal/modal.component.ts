@@ -3,6 +3,9 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TimesheetServiceService } from 'src/app/public/modules/timesheet/services/timesheet-service/timesheet-service.service';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackbarComponent } from '@ui/snackbar/snackbar/snackbar.component';
+
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
@@ -19,7 +22,8 @@ export class ModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data:any,
     private timesheetServiceService: TimesheetServiceService,
     private ref: MatDialogRef<ModalComponent>,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private _snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -97,6 +101,25 @@ export class ModalComponent implements OnInit {
       this.saveTimesheet()
     }else{
       this.addTimesheet()
+    }
+  }
+
+  openSnackBar(title:String,emoji:String) {
+    this._snackBar.openFromComponent(SnackbarComponent, {
+      duration: 5000,
+      data: {
+        title: title,
+        emoji: emoji,
+      }
+    });
+    console.log(this.inputdata)
+  }
+
+  showAlert(){
+    if(this.editMode){
+      this.openSnackBar("Updated Successfully", "✔")
+    }else{
+      this.openSnackBar("Created Successfully", "✔")
     }
   }
 }

@@ -1,9 +1,9 @@
-<div class="flex space-between">
+<div class="flex justify-between items-center pr-6">
   <h1 mat-dialog-title>{{ inputdata.title }}</h1>
   <fa-icon [icon]="faXmark" (click)="closeModal()" class="opacity-60 text-2xl cursor-pointer"></fa-icon>
 </div>
 <form [formGroup]="timesheetForm" (ngSubmit)="onClickSave()">
-  <div mat-dialog-content>
+  <div mat-dialog-content >
     <mat-form-field>
       <mat-label>Projects</mat-label>
       <mat-select formControlName="projects" name="projects" [(value)]="Projects">
@@ -60,8 +60,9 @@
       <input matInput formControlName="total">
     </mat-form-field>
   </div>
-  <div mat-dialog-actions>
-    <button mat-raised-button color="primary" >Save Changes</button>
+  <div mat-dialog-actions class="pl-6">
+    <button mat-raised-button color="primary" mat-stroked-button (click)="showAlert()" aria-label="Show an example snack-bar">
+      Save Changes
+    </button>
   </div>
 </form>
-<!-- <button (click)="closeModal()" mat-raised-button color="warn">Close</button> -->
