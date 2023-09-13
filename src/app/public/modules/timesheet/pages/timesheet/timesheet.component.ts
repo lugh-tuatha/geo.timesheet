@@ -8,6 +8,8 @@ import { ModalComponent } from '@ui/modal/modal/modal.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { TimesheetServiceService } from '../../services/timesheet-service/timesheet-service.service';
+import { SnackbarComponent } from '@ui/snackbar/snackbar/snackbar.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-timesheet',
@@ -33,6 +35,7 @@ export class TimesheetComponent {
     private dialog: MatDialog,
     private http: HttpClient,
     private timesheetServiceService: TimesheetServiceService,
+    private _snackBar: MatSnackBar
   ) { 
     this.loadTimesheet()
   }
@@ -58,6 +61,7 @@ export class TimesheetComponent {
   confirmDelete(){
     this.http.delete('http://localhost:9000/geo/api/v1/timesheet/' + this.deleteId).subscribe();
     this.loadTimesheet()
+    this.openSnackBar("Deleted Successfully", "✔")
   }
 
   /*------------------------ Add entry ------------------------*/
@@ -88,5 +92,16 @@ export class TimesheetComponent {
   Filterchange(data:Event){
     const value=(data.target as HTMLInputElement).value;
     this.dataSource.filter = value
+  }
+
+  /*------------------------ Snackbar alert ------------------------*/
+  openSnackBar(title:String,emoji:String) {
+    this._snackBar.openFromComponent(SnackbarComponent, {
+      duration: 5000,
+      data: {
+        title: title,
+        emoji: emoji,
+      }
+    });
   }
 }

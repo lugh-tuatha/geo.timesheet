@@ -112,7 +112,6 @@ export class ModalComponent implements OnInit {
         emoji: emoji,
       }
     });
-    console.log(this.inputdata)
   }
 
   showAlert(){

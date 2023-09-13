@@ -49,9 +49,9 @@
             <td mat-cell *matCellDef="let element" class="whitespace-nowrap">{{ element.projects }}</td>
           </ng-container>
 
-          <ng-container matColumnDef="description">
+          <ng-container matColumnDef="description" class="w-80">
             <th mat-header-cell *matHeaderCellDef>Description</th>
-            <td mat-cell *matCellDef="let element" class="whitespace-nowrap desc">{{ element.description }}</td>
+            <td mat-cell *matCellDef="let element" class="desc whitespace-nowrap">{{ element.description }}</td>
           </ng-container>
         
           <ng-container matColumnDef="mon">
@@ -84,12 +84,12 @@
           </ng-container>
         
           <ng-container matColumnDef="sat">
-            <th mat-header-cell *matHeaderCellDef>sat</th>
+            <th mat-header-cell *matHeaderCellDef class="weekend">sat</th>
             <td mat-cell *matCellDef="let element" class="weekend">{{ element.sat }}</td>
           </ng-container>
         
           <ng-container matColumnDef="sun">
-            <th mat-header-cell *matHeaderCellDef>sun</th>
+            <th mat-header-cell *matHeaderCellDef class="weekend">sun</th>
             <td mat-cell *matCellDef="let element" class="weekend">{{ element.sun }}</td>
           </ng-container>
 

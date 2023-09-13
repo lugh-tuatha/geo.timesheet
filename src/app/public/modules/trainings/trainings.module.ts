@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { TrainingModalComponent } from './components/training-modal/training-modal.component';
 import { HttpClientModule } from '@angular/common/http'
 import { MatFormField } from '@angular/material/form-field';
+import { MaterialModule } from 'src/app/material.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MatFormField } from '@angular/material/form-field';
     FontAwesomeModule,
     FormsModule,
     HttpClientModule,
+    MaterialModule
   ]
 })
 export class TrainingsModule { }

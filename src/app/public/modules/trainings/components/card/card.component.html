@@ -1,46 +1,33 @@
 <div class="card-container grid grid-cols-3 gap-4">
   <ng-container *ngFor="let trainingData of trainings; let i = index">
-    <div
-      class="box-card border border-gray-300 border-solid rounded-lg p-2.5 shadow-md bg-white py-4 px-4 h-96.5"
-    >
-      <div class="box-content text-center">
-        <div class="training-type flex justify-between items-center">
-          <h2 class="text-lg">{{ trainingData.type }}</h2>
-          <div class="card-menu relative">
-            <fa-icon
-              class="text-gray-400 text-[1.115rem] cursor-pointer opacity-75 justify-self-end"
-              [icon]="faEllipsisVertical"
-              (click)="toggleMenu(i)"
-            ></fa-icon>
-
-            <div
-              class="toggle-item absolute right-0 bg-white rounded-lg shadow-blue-500 cursor-pointer px-5 py-2 hover:bg-opacity-50"
-              *ngIf="isMenuOpened[i]"
-              (click)="toggleMenu(i)"
-            >
-              <div class="edit">Edit</div>
-              <div>Delete</div>
-            </div>
-          </div>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div class="flex items-center justify-between w-full mb-4">
+          <mat-card-title>{{ trainingData.type }}</mat-card-title> 
+          <mat-icon [matMenuTriggerFor]="menu" class="cursor-pointer">more_vert</mat-icon>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Edit</button>
+            <button mat-menu-item>Delete</button>
+          </mat-menu>
         </div>
+      </mat-card-header>
 
-        <ng-template #defaultImage>
-          <img
-            src=" ../../../../assets/image/default/thumb.svg"
-            alt="default thumbnail image"
-            class="w-full bg-var(--default-bg) aspect-video mt-5 rounded-lg"
-          />
-        </ng-template>
-
-        <img
-          [src]="trainingData.cover"
-          [alt]=""
-          class="w-full bg-var(--default-bg) aspect-video mt-5 rounded-lg"
-          *ngIf="trainingData.cover; else defaultImage"
+      <ng-template #defaultImage>
+        <img mat-card-image
+          src="../../../../../../assets/image/default/thumb.png"
+          alt="default thumbnail image"
+          class="aspect-video"
         />
-        <div
-          class="date text-sm text-gray-500 flex justify-between items-center"
-        >
+      </ng-template>
+      <img
+        mat-card-image
+        [src]="trainingData.cover"
+        *ngIf="trainingData.cover; else defaultImage"
+        class="aspect-video"
+      />
+
+      <mat-card-content>
+        <div class="date text-sm mt-2 text-gray-500 flex justify-between items-center">
           <p>{{ trainingData.date }}</p>
           <p>{{ trainingData.duration }} Hours</p>
         </div>
@@ -50,9 +37,10 @@
           <p class="text-left font-medium">{{ trainingData.distriPartner }}</p>
           <p class="text-left font-light text-sm">{{ trainingData.details }}</p>
         </div>
-      </div>
-    </div>
+      </mat-card-content>
+    </mat-card>
   </ng-container>
 
   <app-training-modal></app-training-modal>
 </div>
+

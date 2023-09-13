@@ -10,6 +10,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 @NgModule({
   exports: [
@@ -24,6 +27,8 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
     MatOptionModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatIconModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule { }
