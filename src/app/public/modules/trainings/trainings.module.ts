@@ -7,8 +7,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { TrainingModalComponent } from './components/training-modal/training-modal.component';
 import { HttpClientModule } from '@angular/common/http'
-import { MatFormField } from '@angular/material/form-field';
 import { MaterialModule } from 'src/app/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { MaterialModule } from 'src/app/material.module';
     FontAwesomeModule,
     FormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class TrainingsModule { }

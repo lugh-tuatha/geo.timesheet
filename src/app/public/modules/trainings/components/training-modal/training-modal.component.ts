@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { TrainingDataService } from '../../../../services/training-data/training-data.service';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { FormBuilder } from '@angular/forms';
  
 @Component({
   selector: 'app-training-modal',
@@ -7,28 +9,24 @@ import { TrainingDataService } from '../../../../services/training-data/training
   styleUrls: ['./training-modal.component.scss'],
 })
 export class TrainingModalComponent{
-
-  isModalOpen: boolean = false;
-
-  openModal() {
-    this.isModalOpen = true;
-  }
-
-  closeModal() {
-    this.isModalOpen = false;
-  }
-
   trainings: any;
-  constructor(private trainingData: TrainingDataService){
-    this.trainingData.trainings().subscribe((data) => {
-       this.trainings = data;
-    })
+
+  constructor(
+    private trainingData: TrainingDataService,
+    private ref: MatDialogRef<TrainingModalComponent>,
+    private formBuilder: FormBuilder,
+  ){ }
+
+  trainingForm = this.formBuilder.group({
+    type:this.formBuilder.control(""),
+  })
+
+  closeDialog(){
+    this.ref.close("closed")
   }
 
   postTraining(data:any){
-    console.warn(data);
-    this.trainingData.saveTraining(data).subscribe((result) => {
-      console.warn(result)
-    })
+    this.trainingData.saveTraining(data).subscribe((result) => {})
+    this.closeDialog()
   }
 }

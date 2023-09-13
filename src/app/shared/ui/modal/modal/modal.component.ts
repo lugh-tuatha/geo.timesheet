@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { TimesheetServiceService } from 'src/app/public/modules/timesheet/services/timesheet-service/timesheet-service.service';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -39,7 +39,6 @@ export class ModalComponent implements OnInit {
 
   closeModal(){
     this.ref.close("closed")
-    console.log("sarado")
   }
 
   setpopupdata(_id: any) {

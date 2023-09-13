@@ -7,3 +7,25 @@
   font-size: 14px;
   margin: 0;
 }
+
+.add__training{
+  border: 1px solid var(--border-color);
+  border-radius: .75rem;
+  box-shadow: var(--general-shadow);
+  height: 24.5rem;
+
+  .plus{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    opacity: .5;
+    color: var(--border-color);
+    cursor: pointer;
+    mat-icon{
+      width: 10rem;
+      height: 10rem;
+      font-size: 10rem;
+    }
+  }
+}
