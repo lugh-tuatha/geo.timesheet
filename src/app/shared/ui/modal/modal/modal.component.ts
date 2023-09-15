@@ -80,19 +80,25 @@ export class ModalComponent implements OnInit {
 
     this.timesheetServiceService.updateTimesheet(timesheetId, editedFormData).subscribe(
       (response) => {
-        console.log("Timesheet updated successfully!", response);
         this.closeModal();
+        this.openSnackBar("Updated Successfully", "✔", "success")
       },
       (error) => {
-        console.error("Error updating timesheet:", error);
+        this.openSnackBar("Error updating timesheet", "❌", "error")
       }
     );
   }
 
   addTimesheet(){
-    this.timesheetServiceService.saveTimesheetEntry(this.timesheetForm.value).subscribe(res => {
-      this.closeModal();
-    })
+    this.timesheetServiceService.saveTimesheetEntry(this.timesheetForm.value).subscribe(
+      (response) => {
+        this.closeModal();
+        this.openSnackBar("Created Successfully", "✔", "success")
+      },
+      (error) => {
+        this.openSnackBar("Error creating entry", "❌", "error")
+      }
+    );
   }
 
   onClickSave(){
@@ -103,21 +109,14 @@ export class ModalComponent implements OnInit {
     }
   }
 
-  openSnackBar(title:String,emoji:String) {
+  openSnackBar(title:String, emoji:String, status:String) {
     this._snackBar.openFromComponent(SnackbarComponent, {
       duration: 5000,
       data: {
         title: title,
         emoji: emoji,
+        status: status,
       }
     });
-  }
-
-  showAlert(){
-    if(this.editMode){
-      this.openSnackBar("Updated Successfully", "✔")
-    }else{
-      this.openSnackBar("Created Successfully", "✔")
-    }
   }
 }

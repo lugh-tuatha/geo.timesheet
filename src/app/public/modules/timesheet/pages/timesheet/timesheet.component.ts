@@ -61,7 +61,7 @@ export class TimesheetComponent {
   confirmDelete(){
     this.http.delete('http://localhost:9000/geo/api/v1/timesheet/' + this.deleteId).subscribe();
     this.loadTimesheet()
-    this.openSnackBar("Deleted Successfully", "✔")
+    this.openSnackBar("Deleted Successfully", "✔", "success")
   }
 
   /*------------------------ Add entry ------------------------*/
@@ -95,12 +95,13 @@ export class TimesheetComponent {
   }
 
   /*------------------------ Snackbar alert ------------------------*/
-  openSnackBar(title:String,emoji:String) {
+  openSnackBar(title:String,emoji:String,status:String) {
     this._snackBar.openFromComponent(SnackbarComponent, {
       duration: 5000,
       data: {
         title: title,
         emoji: emoji,
+        status: status,
       }
     });
   }
